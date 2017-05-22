@@ -23,7 +23,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   <div class="site-wrapper">
-  <a href="room_view.php"> lien ici </a>
     <div class="site-wrapper-inner">
       <div class="cover-container">
         <div class="header clearfix">
