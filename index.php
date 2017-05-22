@@ -27,12 +27,12 @@
       <div class="cover-container">
         <div class="header clearfix">
           <div class="inner">
-            <img class="nav_logo" src="ressources/logo_quiz.png"/>
-            <nav class="nav_login">
-              <input type="text"/>
-              <input type="password"/>
-              <input type="submit" class="btn" value="GO"/>
-            </nav>
+            <img class="nav-logo" src="ressources/logo_quiz.png"/>
+            <form class="nav-login">
+                <input type="text" placeholder="Pseudo" name="username" class="login-text"/>
+                <input type="password" placeholder="Mot de passe" name="pseudo" class="login-text"/>
+                <input type="submit" class="button-go" value="Go"/>
+            </form>
           </div>
         </div>
         <div class="inner cover">
