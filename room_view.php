@@ -1,3 +1,4 @@
+<?php include 'room_controller.php'; ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,13 +7,19 @@
 	</head>
 	<body>
 		<div id="header">
-			<h1>Nom de la partie :</h1>
+			<h1>Nom de la partie : 
+				<?php
+
+					echo $result['0']['nb_player'];
+				 ?> 
+			</h1>
 			<h2>Nombre de joueur :</h2>
 			<ul>
-				<li>Joueur 1</li>
-				<li>Joueur 2</li>
-				<li>Joueur 3</li>
-				<li>Joueur 4</li>
+				<?php
+				 foreach ($result as $key => $value) {
+				 	echo '<li>' . $value['plr_pseudo'] . '</li>';
+				 }
+				?>
 			</ul>
 		</div>
 	</body>
