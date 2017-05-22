@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 22 Mai 2017 à 12:59
+-- Généré le :  Lun 22 Mai 2017 à 13:51
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `quizz_table`
+-- Base de données :  `quizz_battle`
 --
-CREATE DATABASE IF NOT EXISTS `quizz_table` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `quizz_table`;
+CREATE DATABASE IF NOT EXISTS `quizz_battle` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `quizz_battle`;
 
 -- --------------------------------------------------------
 
