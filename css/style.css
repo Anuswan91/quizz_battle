@@ -37,12 +37,12 @@ body {
  * Header
  */
 
-.nav_logo{
+.nav-logo{
     margin-bottom: 30px;
     height: 50px;
 }
 
-.nav_login {
+.nav-login {
     margin-top: 10px;
 }
 
@@ -53,10 +53,10 @@ body {
 }
 
 @media (min-width: 768px) {
-    .nav_logo {
+    .nav-logo {
         float: left;
     }
-    .nav_login {
+    .nav-login {
         margin-top: 10px;
         float: right;
     }
@@ -97,5 +97,68 @@ body {
     .footer,
     .cover-container {
         width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+}
+
+/*
+*Login buttons
+*/
+.button-go:hover{
+    background: #A92626;
+}
+
+.button-go{
+    padding: 8px 13px;
+    -webkit-appearance: button;
+    cursor: pointer;
+    background: #b72a2a;
+    border: 1px solid #922626;
+    color: #fff !important;
+    -webkit-box-shadow: inset 0px 1px 3px #922626;
+    -moz-box-shadow: inset 0px 1px 3px #922626;
+    box-shadow: inset 0px 1px 3px #922626;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    line-height: 18px;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: left;
+    outline: none;
+    white-space: normal;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+.login-text{
+    margin-right:5px;
+    padding:8px;
+    width: 160px;
+    background: #f1ecf7;
+    border-color: #68488b;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    color: #b2aab9;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 0.1s ease-in-out 0s;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    -ms-transition: all 0.1s ease-in-out 0s;
+    -o-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+@media (max-width: 500px) {
+    .login-text {
+        margin-bottom: 6px;
+    }
+    .nav-login {
+        display: inline-grid;
+    }
+    .nav-logo{
+         margin-bottom: 0px;
     }
 }
