@@ -8,7 +8,7 @@ try {
     //$bdd = new PDO('mysql:host=tp-sgbd;dbname=vblum_a;charset=utf8', 'vblum_a', 'vblum_a');
     //Pour se connecter en local ailleurs
     //$bdd = new PDO('mysql:host=localhost;dbname=risk;charset=utf8', 'root', 'root');
-    $bdd = new PDO('mysql:host=localhost;dbname=films;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=quizz_battle;charset=utf8', 'root', '');
 
 
 } catch (Exception $e) {
