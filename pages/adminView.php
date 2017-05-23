@@ -37,13 +37,13 @@ include '../includes/header.php';
 	?>
 	</select><br>
 	<input type="text" placeholder="Question" name="nq_question"><br>
-	<input type="radio" name="nq_correctA">
+	<input type="checkbox" name="nq_correctA">
 	<input type="text" placeholder="Réponse A" name="nq_answerA"><br>
-	<input type="radio" name="nq_correctB">
+	<input type="checkbox" name="nq_correctB">
 	<input type="text" placeholder="Réponse B" name="nq_answerB"><br>
-	<input type="radio" name="nq_correctC">
+	<input type="checkbox" name="nq_correctC">
 	<input type="text" placeholder="Réponse C" name="nq_answerC"><br>
-	<input type="radio" name="nq_correctD">
+	<input type="checkbox" name="nq_correctD">
 	<input type="text" placeholder="Réponse D" name="nq_answerD"><br>
 	<input type="submit" value="Submit">
 </form>
@@ -54,13 +54,26 @@ include '../includes/header.php';
     <th>Identifiant</th>
     <th>Question</th>
     <th>Thème</th>
+    <th>Réponses</th>
   </tr>
   <?php
-	  foreach ($questions as $question) {
+	  foreach ($questions as $key => $question) {
 	  	echo '<tr>';
-		echo '<td>'.$question['qst_id'].'</td>';
-		echo '<td>'.$question['qst_text'].'</td>';
-		echo '<td>'.$question['thm_name'].'</td>';
+		echo '<td>'.$key.'</td>';
+		echo '<td>'.$question['text'].'</td>';
+		echo '<td>'.$question['theme'].'</td>';
+		echo '<td>';
+		echo '<ul>';
+		foreach ($question['answers'] as $answer) {
+			if ($answer['ans_correct']) {
+				echo '<li><b>'.$answer['ans_text'].'</b></li>';
+			}
+			else {
+				echo '<li>'.$answer['ans_text'].'</li>';
+			}
+		}
+		echo '</ul>';
+		echo '</td>';
 		echo '</tr>';
 	}
   ?>
