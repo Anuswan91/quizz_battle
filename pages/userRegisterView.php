@@ -4,21 +4,23 @@ include '../php/userRegisterController.php';
 
 ?>
 <link rel="stylesheet" href="../css/styleRegister.css"/>
-
+<link href="../css/style.css" rel="stylesheet">
 <!-- Formulaire création d'un compte -->
 <body>
+<?php 
+if (isset($_GET['error']) && $_GET['error']==true){
+	?><div class="alert alert-danger">
+  	<strong>FAILED!</strong> Login already use ! try with your mom's name.
+	</div>
+	<?php
+}
+?>
 <div class="container">
   <h2>Registration</h2>
-  <form action="" name="registration">
+  <form action="../php/userRegisterController.php"  method="post" name="registration">
 
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firstname" placeholder="Prénom"/>
-
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname" placeholder="Nom de famille"/>
-
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" placeholder="Email --> prenom.nom@NomDeDomaine	.com"/>
+    <label for="login">Login</label>
+    <input type="text" name="login" id="login" placeholder="Login"/>
 
     <label for="password">Password</label>
     <input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"/>
@@ -28,7 +30,7 @@ include '../php/userRegisterController.php';
   </form>
 </div>
 
-<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
+
 <script type="text/javascript" src="../jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../jquery-validation-1.15.0/dist/additional-methods.min.js"></script>
 <script>
@@ -72,11 +74,7 @@ $(function() {
     }
   });
 });
-
-  
-
-  
 </script>
-
+<?php include '../includes/footer.php';?>
 </body>
 
