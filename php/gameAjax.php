@@ -25,20 +25,16 @@
 	function getScore($idGame) {
 		include "../includes/DB.php";
 
-		$query = $bdd->query("	SELECT pha_player_id, ans_id, ans_correct, qst_id
-								FROM player_has_answer
-								INNER JOIN answer ON pha_answer_id = ans_id
-								INNER JOIN question ON ans_question_id = qst_id
-								INNER JOIN game_has_question ON pha_game_id = ghq_game_id
-									WHERE ghq_focus = 1
-									AND pha_game_id = '".$idGame."'");
-		$res = $query->fetchAll();
-
-		//TODO while tout le monde n'a pas répondu ou sleep
-		//On requête
-
+		$cpt = 0;
+		//TODO var_dump(isEver...)
+		while($cpt < 5 && !isEverybodyAnswerFocusedQuestion($idGame) ) {
+			sleep(1);
+			$cpt++;
+		}
 		//on incrémente le focus
-		//return le score pour chaque joueur de la partie
+		incrementFocus($idGame);
+
+		return getScoreByGame($idGame);
 	}
 
 	// Fonction pour récupérer le nombre de joueurs d'une partie
@@ -50,6 +46,55 @@
 								WHERE ghp_alive = 1 
 									AND ghp_game_id = '".$idGame."'");
 		return $query->fetchAll();
+	}
+
+	// Fonction pour récupérer le nombre de joueurs d'une partie
+	function getScoreByGame($idGame) {
+		include "../includes/DB.php";
+
+		$query = $bdd->query("	SELECT pha_player_id, plr_pseudo, sum(ans_correct) score 
+								FROM `player_has_answer` 
+								INNER JOIN answer ON pha_answer_id = ans_id
+								INNER JOIN player ON pha_player_id = plr_id
+								WHERE pha_game_id = '".$idGame."'
+								GROUP BY pha_player_id");
+		return $query->fetchAll();
+	}
+
+	// Fonction pour le focus d'une question
+	function incrementFocus($idGame) {
+		include "../includes/DB.php";
+
+		$query = $bdd->query("	SELECT ghq_question_id, ghq_focus 
+								FROM game_has_question
+								WHERE ghq_game_id = '".$idGame."'");
+		
+		$search = false;
+		$questionnewFocus = NULL;
+		$questionOldFocus = NULL;
+		foreach ($query->fetchAll() as $el) {
+			if ($search == true) {
+				$search = false;
+				$questionnewFocus = $el['ghq_question_id'];
+			}
+			if ($el['ghq_focus']) {
+				$search = true;
+				$questionOldFocus = $el['ghq_question_id'];
+			}
+		}
+		//update old focus
+		$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '0' 
+								WHERE `ghq_game_id` = '".$idGame."' 
+									AND `ghq_question_id` = '".$questionOldFocus."'");
+		if (!$search && $questionnewFocus == NULL) {
+			//fin du game
+		}
+		else {
+			//Update new focus
+			$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '1' 
+									WHERE `ghq_game_id` = '".$idGame."' 
+										AND `ghq_question_id` = '".$questionNewFocus."'");
+		}
 	}
 
 	// Fonction pour récupérer le nombre de personne ayant répondu à la focused question
@@ -66,6 +111,7 @@
 		return $query->fetchAll();
 	}
 
+	// Fonction qui renvoie un booleen pour savoir si tous les joueurs alive ont répondu à la focused question
 	function isEverybodyAnswerFocusedQuestion($idGame) {
 		include "../includes/DB.php";
 		
