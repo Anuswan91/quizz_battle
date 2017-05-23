@@ -11,8 +11,9 @@
 		if (isset($_POST['nt_theme'])) {
 			// Ajout d'un nouveau thème
 			$theme = $_POST['nt_theme'];
-			$query = $bdd->query("INSERT INTO theme (`thm_id`, `thm_name`) 
-											VALUES (NULL, '".$theme."')");
+			$color = $_POST['nt_color'];
+			$query = $bdd->query("INSERT INTO theme (`thm_id`, `thm_name`, `thm_color`) 
+											VALUES (NULL, '".$theme."', '".$color."')");
 			header('Location: ../pages/adminView.php');
 		}
 		elseif (isset($_POST['nq_question'])) {
@@ -84,7 +85,7 @@
 	}	
 
 	//Selection des thèmes
-	$query = $bdd->query("SELECT thm_id, thm_name
+	$query = $bdd->query("SELECT thm_id, thm_name, thm_color
 						  FROM theme");
 	$themes = $query->fetchAll();
 
