@@ -1,4 +1,4 @@
-<?php include '../php/roomController.php'; ?>
+<?php include '../php/RoomController.php'; ?>
 <!DOCTYPE html>
 <html>
 	<head>
