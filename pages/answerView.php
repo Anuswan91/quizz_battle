@@ -14,7 +14,7 @@
 
 			include "../includes/DB.php"; //Connexion a la base de données
 
-			$ans_question_id = 0
+			$ans_question_id = 0;
 			$sql = "SELECT ans_correct FROM answer WHERE ans_id = " + $ans_question_id;
 			$res = $bdd->query($sql)->fetchAll();
 
