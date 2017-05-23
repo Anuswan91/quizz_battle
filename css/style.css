@@ -152,6 +152,10 @@ body {
 }
 
 @media (max-width: 500px) {
+    .button-go{
+        text-align: center;
+        background: #A92626;
+    }
     .login-text {
         margin-bottom: 6px;
     }
@@ -159,6 +163,6 @@ body {
         display: inline-grid;
     }
     .nav-logo{
-         margin-bottom: 0px;
+         margin-bottom: 10px;
     }
 }
