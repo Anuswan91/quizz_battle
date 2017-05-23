@@ -15,6 +15,8 @@
 	if (isset($_GET['question_number']))
 		$question_number = $_GET['question_number'];
 
+	$question_number = 0;
+
 	//$gme_id = $_SESSION['Game']['gme_id'];
 
 	//$sql_question = "SELECT * FROM game_has_question WHERE ghq_game_id = ".$gme_id;

@@ -56,16 +56,19 @@
 
 			var question_number = 0;
 
-			$.ajax({
-  				url: 'gameController.php',
+			/*$.ajax({
+  				url: '../php/gameController.php',
   				data: 'question_number='+ question_number
 			});
+			*/
 
+			
 			document.getElementById('question').innerHTML = '<?php echo $res_question[$question_number]['qst_text'];?>';
 			document.getElementById('0').innerHTML = '<?php echo $res_answers[$question_number][0]['ans_text']?>';
 			document.getElementById('1').innerHTML = '<?php echo $res_answers[$question_number][1]['ans_text']?>';
 			document.getElementById('2').innerHTML = '<?php echo $res_answers[$question_number][2]['ans_text']?>';
 			document.getElementById('3').innerHTML = '<?php echo $res_answers[$question_number][3]['ans_text']?>';
+			
 
 			question_number ++;
 		}
