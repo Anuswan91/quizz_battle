@@ -39,7 +39,7 @@ function registerUser($bdd){
 	$_SESSION['Auth']['plr_pseudo'] = $plr_pseudo;
 	$_SESSION['Auth']['plr_status_id'] = $plr_status_id;
 	
-	header("Location: ../index.php");
+	header("Location: ../pages/index.php");
 
 	return true;
 }
