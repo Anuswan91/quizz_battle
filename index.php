@@ -40,7 +40,7 @@
             <div class="row home-container">
                 <div class="col-sm-6 col-home-left">
                     <h1>Tester vos connaissances !</h1>
-                    <a href="#" title="Jouer" class="btn-home">Jouer en ligne</a><br/>
+                    <a href="php/joinRoom.php" title="Jouer" class="btn-home">Jouer en ligne</a><br/>
                     <a href="#" title="Amis" class="btn-home">Jouer avec des amis</a><br/><br/>
                     <h1>Pas encore membre ?</h1>
                     <a href="#" title="S'inscrire" class="btn-home">S'inscrire</a>

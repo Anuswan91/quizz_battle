@@ -13,6 +13,6 @@
 						  FROM player");
 
 	$result = $query->fetchAll();
-	die(var_dump($result))
+	//die(var_dump($result))
 
 ?>
