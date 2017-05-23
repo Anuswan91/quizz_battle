@@ -31,7 +31,7 @@
                     <a href="#" title="Jouer" class="btn-home">Jouer en ligne</a><br/>
                     <a href="#" title="Amis" class="btn-home">Jouer avec des amis</a><br/><br/>
                     <?php
-                    	if (!isset($_SESSION['Auth']) && $_SESSION['Auth']!= null)
+                    	if (!isset($_SESSION['Auth']) || $_SESSION['Auth'] == null)
                     	{
                     		?>
                     		<h1>Pas encore membre ?</h1>
