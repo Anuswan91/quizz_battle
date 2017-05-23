@@ -1,1 +1,46 @@
-<?php include '../php/AdminController.php'; ?>
+<?php 
+include '../php/AdminController.php'; 
+include '../includes/header.php';
+?>
+
+<!-- Formulaire nouveau thème -->
+<form action="../php/adminController.php" method="post" name="newTheme">
+  <input type="text" placeholder="Thème" name="theme">
+  <input type="submit" value="Submit">
+</form>
+
+<!-- Tableau des thèmes -->
+<table class="table">
+  <tr>
+    <th>Identifiant</th>
+    <th>Nom</th>
+  </tr>
+  <?php
+  	foreach ($themes as $theme) {
+		echo '<tr>';
+		echo '<td>'.$theme['thm_id'].'</td>';
+		echo '<td>'.$theme['thm_name'].'</td>';
+		echo '</tr>';
+	}
+  ?>
+</table>
+
+<!-- Formulaire nouvelle question -->
+
+<!-- Tableau des questions -->
+<table class="table">
+  <tr>
+    <th>Identifiant</th>
+    <th>Question</th>
+    <th>Thème</th>
+  </tr>
+  <?php
+	  foreach ($questions as $question) {
+	  	echo '<tr>';
+		echo '<td>'.$question['qst_id'].'</td>';
+		echo '<td>'.$question['qst_text'].'</td>';
+		echo '<td>'.$question['thm_name'].'</td>';
+		echo '</tr>';
+	}
+  ?>
+</table>
