@@ -9,10 +9,32 @@
 	//Connexion à la base de données
 	include "../includes/DB.php";
 
-	$query = $bdd->query("SELECT plr_pseudo, COUNT(*) as nb_player
-						  FROM player");
+	//On vérifie que le joueur est bien assigné à un jeu
+	if(isset($_SESSION['Game']['gme_id'])){
 
-	$result = $query->fetchAll();
-	die(var_dump($result))
+		//On récupère ka liste des joueurs et le nombre
+		$query = $bdd->query("SELECT plr_pseudo, COUNT(*) as nb_player
+								FROM game_has_player ghp
+								INNER JOIN player p ON p.plr_id = ghp.ghp_player_id
+								WHERE ghp_game_id =".intval($_SESSION['Game']['gme_id']));
+	}
+
+	$listJoueur = $query->fetchAll();
+
+	$themes = $bdd->query("SELECT *
+						   FROM theme");
+
+	$themes = $themes->fetchAll();
+
+/*	$base = new EventBase();
+	$n = 2;
+	$e = Event::timer($base, function($n) use (&$e) {
+		echo "$n seconds elapsed\n";
+		$e->delTimer();
+	}, $n);
+	$e->addTimer($n);
+	$base->loop();*/
+
+	//die(var_dump($result))
 
 ?>

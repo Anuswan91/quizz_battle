@@ -238,6 +238,16 @@ h1{
     .img-home {
         display: none;
     }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .nav-login a, .nav-login span{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 5px;
+    }
 }
 
 .col-home-left{
@@ -255,18 +265,15 @@ h1{
 
 .div-info-base, .div-info-actif{
     text-shadow: none;
-    border: 1px solid black;
-    padding: 7px 20px;
     position: fixed;
     z-index: 3;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
     margin:0;
+    opacity: 0.8 !important;
+    width: 100%;
+    border-radius: 0;
     text-align: center;
-    color: black;
-    font-size: 0.9em;
-    width: 250px;
-    left : 50%;
-    margin-left : -125px;
+    font-weight: bold;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
 }
 
 .div-info-base{
@@ -275,19 +282,31 @@ h1{
 }
 
 .div-info-actif{
-    top: 30px;
+    top: 0px;
     transition: all 1s;
 }
 
 .container-info{
-    display: inline-block;
+    display: inline;
     /* reset container's center alignment */
     text-align: left;
 }
 
 .img-info{
     position: absolute;
-    right: 5px;
+    right: 40px;
     top: 5px;
     cursor: pointer;
+}
+
+.nav-login span{
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px #333;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.nav-login a{
+    margin-left: 5px;
 }
