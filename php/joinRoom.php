@@ -7,16 +7,16 @@
 
 	//Connexion à la base de données
 	include "../includes/DB.php";
+$_SESSION['Auth']['plr_pseudo'] = NULL;
 
 	//Génération du login, pseudo du joueur ou sinon guest + month day year hour i and second
 	//$psdPlr = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : "guest" . date("_mdyhis");
-	if(isset($_SESSION['Auth']['plr_pseudo']) && isset($_SESSION['Auth']['plr_pseudo'])) {
+	if(isset($_SESSION['Auth']['plr_pseudo']) || isset($_SESSION['Auth']['plr_pseudo'])) {
 		echo "la";
 		$plrPsd = $_SESSION['Auth']['plr_pseudo'];
 		$plrId = $_SESSION['Auth']['plr_id'];
 
 	} else {
-		echo "l";
 		$plrPsd = "guest" . date("_mdyhis");
 		
 		$error = $bdd->exec("INSERT INTO player (plr_guest, plr_pseudo,plr_password) VALUES(0, '". $plrPsd ."', '');") ;
@@ -49,15 +49,22 @@
 
 		$roomId = $bdd->lastInsertId();
 	} 
-	else
+	else{
+
 		$roomId = $room->fetch();
+
+		//On incrémente le nombre de joueur
+		$bdd->exec("UPDATE game SET gme_nb_player = gme_nb_player + 1 WHERE gme_id =". intval($roomId) . ";");
+	}
 
 
 	//Ajout du joueur à la room
 	$bdd->exec("INSERT INTO game_has_player(ghp_alive, ghp_game_id, ghp_player_id) VALUES(1, ". intval($roomId) .", ". $plrId ." );");
 
+	$_SESSION['Game']['gme_id'] = $roomId;
+
 	if($error == 0){
 			print_r("File joinRoom.php insert game_has_player : " . $bdd->errorInfo());
 	}
 
-	header('Location: ../pages/roomView.php');
+	//header('Location: ../pages/roomView.php');
