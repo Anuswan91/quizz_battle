@@ -242,6 +242,12 @@ h1{
     h1 {
         font-size: 24px;
     }
+
+    .nav-login a, .nav-login span{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 5px;
+    }
 }
 
 .col-home-left{
@@ -288,7 +294,7 @@ h1{
 
 .img-info{
     position: absolute;
-    right: 5px;
+    right: 40px;
     top: 5px;
     cursor: pointer;
 }

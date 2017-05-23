@@ -7,7 +7,7 @@
 	//Connexion à la base de données
 	include "../includes/DB.php";
 
-	if ($_POST) {
+	if ($_POST || $_GET) {
 		if (isset($_POST['nt_theme'])) {
 			// Ajout d'un nouveau thème
 			$theme = $_POST['nt_theme'];
@@ -16,7 +16,6 @@
 			header('Location: ../pages/adminView.php');
 		}
 		elseif (isset($_POST['nq_question'])) {
-			var_dump($_POST);
 			// Ajout d'un nouveau thème
 			$question = $_POST['nq_question'];
 			$theme = $_POST['nq_theme'];
@@ -46,10 +45,42 @@
 			
 			header('Location: ../pages/adminView.php');
 		}
-	}
+		elseif(isset($_GET['dq'])) {
+			//Suppression d'une question
+			$id = $_GET['dq'];
+			$query = $bdd->query("	DELETE 
+									FROM answer 
+									WHERE ans_question_id = '".$id."'");
+			$query = $bdd->query("	DELETE 
+									FROM question 
+									WHERE qst_id = '".$id."'");
 
-	if(session_id() == null){
-		session_start();
+			header('Location: ../pages/adminView.php');
+		}
+		elseif(isset($_GET['dt'])) {
+			//Suppression d'un thème
+			$id = $_GET['dt'];
+			
+			$query = $bdd->query("	SELECT qst_id, ans_id 
+									FROM question
+									INNER JOIN answer ON qst_id = ans_question_id
+									WHERE qst_theme_id = '".$id."'");
+			$array = $query->fetchAll();
+			foreach ($array as $el) {
+				$query = $bdd->query("	DELETE 
+										FROM answer 
+										WHERE ans_id = '".$el['ans_id']."'");
+
+				$query = $bdd->query("	DELETE 
+										FROM question 
+										WHERE qst_id = '".$el['qst_id']."'");
+			}
+			$query = $bdd->query("	DELETE 
+									FROM theme 
+									WHERE thm_id = '".$id."'");
+
+			header('Location: ../pages/adminView.php');
+		}
 	}	
 
 	//Selection des thèmes
