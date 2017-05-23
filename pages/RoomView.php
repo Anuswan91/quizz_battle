@@ -1,4 +1,4 @@
-<?php include '../php/roomController.php'; ?>
+<?php include '../php/RoomController.php'; ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,22 +7,30 @@
 	</head>
 	<body>
 		<div id="header">
-			<h1>Nom de la partie : 
-				
+			<h1>
+				Débutera dans :
 			</h1>
 			<h2>Nombre de joueur :
 				<?php
-
-					echo $result['0']['nb_player'];
+					echo $listJoueur['0']['nb_player'];
 				 ?> 
 			</h2>
 			<ul>
 				<?php
-				 foreach ($result as $key => $value) {
+				 foreach ($listJoueur as $key => $value) {
 				 	echo '<li>' . $value['plr_pseudo'] . '</li>';
 				 }
 				?>
 			</ul>
+				<select>
+					<?php
+						foreach ($themes as $key => $value) {	
+							echo "<option value='".$value['thm_id']."''>".$value['thm_name']."</option>";
+						}
+					?>
+				</select>
+				<br>
+			<a href="#">Quitter</a>
 		</div>
 	</body>
 </html>
