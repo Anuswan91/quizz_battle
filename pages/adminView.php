@@ -21,6 +21,12 @@ include '../includes/header.php';
 		echo '<tr>';
 		echo '<td>'.$theme['thm_id'].'</td>';
 		echo '<td>'.$theme['thm_name'].'</td>';
+		echo '<td>';
+		echo '<a href="../php/adminController.php?dt='.$theme['thm_id'].'">';
+		echo '<span class="glyphicon glyphicon-trash">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr>';
 		echo '</tr>';
 	}
   ?>
@@ -77,7 +83,7 @@ include '../includes/header.php';
 		echo '</ul>';
 		echo '</td>';
 		echo '<td>';
-		echo '<a href="../php/adminController.php?d='.$key.'">';
+		echo '<a href="../php/adminController.php?dq='.$key.'">';
 		echo '<span class="glyphicon glyphicon-trash">';
 		echo '</a>';
 		echo '</td>';
