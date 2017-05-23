@@ -1,9 +1,8 @@
 <?php
     include '../includes/header.php';
     include '../php/Notif.php';
-    ?>
+ ?>
 
-<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet">
 <body>
   <div class="site-wrapper">
@@ -11,12 +10,18 @@
       <div class="cover-container">
         <div class="masthead clearfix">
           <div class="inner">
-            <img class="nav-logo" src="../ressources/logo_quiz.png"/>
-            <form class="nav-login" action="../php/userLoginController.php"  method="post" name="login">
+           <img class="nav-logo" src="../ressources/logo_quiz.png"/>
+           <div class="nav-login">
+                <span class="username">Pseudo</span>
+                <a href="#" class="btn-go">ADMIN</a>
+                <a href="#" class="btn-go" onclick="notif('Déconnecté', 1);">LOGOUT</a>
+            </div>
+           <!-- <form class="nav-login" action="../php/userLoginController.php"  method="post" name="login">
                 <input type="text" placeholder="Pseudo" name="pseudo" class="login-text"/>
                 <input type="password" placeholder="Mot de passe" name="password" class="login-text"/>
                 <input type="submit" class="btn-go" value="Go"/>
-            </form>
+            </form>-->
+
           </div>
         </div>
         <div class="inner cover">
