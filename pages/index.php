@@ -2,8 +2,6 @@
     include '../includes/header.php';
     include '../php/Notif.php';
     
-    //$_SESSION['Auth']['plr_pseudo'] = "jhfze";
-   // die(var_dump($_SESSION['Auth']));
     if(isset($_GET['logout']) && $_GET['logout'] != null)
     {
     	$_SESSION['Auth'] = null;
@@ -18,7 +16,7 @@
       <div class="cover-container">
         <div class="masthead clearfix">
           <div class="inner">
-           <img class="nav-logo" src="../ressources/logo_quiz.png"/>
+          <a href="index.php"><img class="nav-logo" src="../ressources/logo_quiz.png"/></a>
            <?php
             if (isset($_SESSION['Auth']) && !empty($_SESSION['Auth']))
             {?>
@@ -34,7 +32,6 @@
                 <input type="submit" class="btn-go" value="Go"/>
             </form>
             <?php }?>
-
           </div>
         </div>
         <div class="inner cover">
@@ -44,7 +41,7 @@
                     <a href="#" title="Jouer" class="btn-home">Jouer en ligne</a><br/>
                     <a href="#" title="Amis" class="btn-home">Jouer avec des amis</a><br/><br/>
                     <?php
-                    	if (!isset($_SESSION['Auth']))
+                   	if (!isset($_SESSION['Auth']) || $_SESSION['Auth'] == null)
                     	{
                     		?>
                     		<h1>Pas encore membre ?</h1>
