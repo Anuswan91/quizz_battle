@@ -36,15 +36,8 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD:pages/index.php
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
   <?php
     include '../includes/footer.php';
   ?>
-=======
-<script src="bootstrap/js/jquery-3.1.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
->>>>>>> 9dc5f39f61d8dcf97f3da389aac9dacd85866926:index.php
   </body>
 </html>
