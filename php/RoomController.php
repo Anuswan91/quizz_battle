@@ -17,23 +17,23 @@
 								FROM game_has_player ghp
 								INNER JOIN player p ON p.plr_id = ghp.ghp_player_id
 								WHERE ghp_game_id =".intval($_SESSION['Game']['gme_id']));
+
+		$listJoueur = $query->fetchAll();
+
+		$themes = $bdd->query("SELECT *
+							   FROM theme");
+
+		$themes = $themes->fetchAll();
+		var_dump("SELECT SECOND( gme_date) as seconde FROM game WHERE gme_id =". intval(isset($_SESSION['Game']['gme_id'])));
+		$time = $bdd->query("SELECT SECOND( gme_date) as seconde FROM game WHERE gme_id =". intval(isset($_SESSION['Game']['gme_id'])));
+		$time = $time->fetch();
+		var_dump($time);
+
+	} else {
+
+		header('Location: ../pages/index.php');
+
 	}
-
-	$listJoueur = $query->fetchAll();
-
-	$themes = $bdd->query("SELECT *
-						   FROM theme");
-
-	$themes = $themes->fetchAll();
-
-/*	$base = new EventBase();
-	$n = 2;
-	$e = Event::timer($base, function($n) use (&$e) {
-		echo "$n seconds elapsed\n";
-		$e->delTimer();
-	}, $n);
-	$e->addTimer($n);
-	$base->loop();*/
 
 	//die(var_dump($result))
 
