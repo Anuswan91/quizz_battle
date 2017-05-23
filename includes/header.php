@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../img/index.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Quiz Battle</title>
 	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">

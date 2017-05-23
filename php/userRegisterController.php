@@ -32,9 +32,13 @@ function registerUser($bdd){
 	$req = "INSERT INTO player (plr_pseudo, plr_password, plr_guest, plr_date_crea, plr_status_id)
 			VALUES ('".$plr_pseudo."', '".$plr_password."', '".$plr_guest."', '".$plr_date_crea."','".$plr_status_id."');";
 	$res = $bdd->exec($req);
+	
+	$plr_id = $bdd->lastInsertId();
 
+	$_SESSION['Auth']['plr_id'] = $plr_id;
 	$_SESSION['Auth']['plr_pseudo'] = $plr_pseudo;
 	$_SESSION['Auth']['plr_status_id'] = $plr_status_id;
+	
 	header("Location: ../index.php");
 
 	return true;
