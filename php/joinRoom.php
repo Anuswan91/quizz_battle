@@ -5,9 +5,6 @@
 		session_start();
 	}
 
-	$_SESSION['Auth']['plr_pseudo'] = NULL;
-	$_SESSION['Auth']['plr_id'] = NULL;
-
 	//Connexion à la base de données
 	include "../includes/DB.php";
 
