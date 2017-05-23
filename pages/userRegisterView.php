@@ -1,36 +1,46 @@
 <?php
 include '../includes/header.php';
 include '../php/userRegisterController.php';
-
 ?>
 <link rel="stylesheet" href="../css/styleRegister.css"/>
 <link href="../css/style.css" rel="stylesheet">
 <!-- Formulaire création d'un compte -->
 <body>
-<?php 
-if (isset($_GET['error']) && $_GET['error']==true){
-	?><div class="alert alert-danger">
-  	<strong>FAILED!</strong> Login already use ! try with your mom's name.
-	</div>
-	<?php
-}
+<?php
+include '../php/Notif.php';
 ?>
-<div class="container">
-  <h2>Registration</h2>
-  <form action="../php/userRegisterController.php"  method="post" name="registration">
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="masthead clearfix">
+        <div class="inner">
+          <img class="nav-logo" src="../ressources/logo_quiz.png"/>
+        </div>
+      </div>
+      <div class="inner cover">
+          <h2>Inscription</h2>
+          <form action="../php/userRegisterController.php"  method="post" name="registration">
 
-    <label for="login">Login</label>
-    <input type="text" name="login" id="login" placeholder="Login"/>
+              <label for="login">Pseudo</label>
+              <input type="text" name="login" id="login" placeholder="Pseudo"/>
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"/>
+              <label for="password">Mot de passe</label>
+              <input type="password" name="password" id="password" placeholder="Mot de passe"/>
 
-    <button type="submit">Register</button>
+              <button type="submit" class="btn-home">S'inscrire</button>
 
-  </form>
+          </form>
+      </div>
+    </div>
+  </div>
 </div>
-
-
+<?php
+include '../includes/footer.php';
+if (isset($_GET['error']) && $_GET['error']==true){
+    ?><script>notif("ERREUR ! Ce nom d''utilisateur existe déja.", 1);</script>
+    <?php
+};
+?>
 <script type="text/javascript" src="../jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../jquery-validation-1.15.0/dist/additional-methods.min.js"></script>
 <script>
@@ -75,6 +85,6 @@ $(function() {
   });
 });
 </script>
-<?php include '../includes/footer.php';?>
 </body>
+</html>
 
