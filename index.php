@@ -29,9 +29,9 @@
         <div class="masthead clearfix">
           <div class="inner">
             <img class="nav-logo" src="ressources/logo_quiz.png"/>
-            <form class="nav-login">
-                <input type="text" placeholder="Pseudo" name="username" class="login-text"/>
-                <input type="password" placeholder="Mot de passe" name="pseudo" class="login-text"/>
+            <form class="nav-login" action="php/userLoginController.php"  method="post" name="login">
+                <input type="text" placeholder="Pseudo" name="pseudo" class="login-text"/>
+                <input type="password" placeholder="Mot de passe" name="password" class="login-text"/>
                 <input type="submit" class="btn-go" value="Go"/>
             </form>
           </div>
@@ -53,9 +53,7 @@
       </div>
     </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-  <script src="../../dist/js/bootstrap.min.js"></script>
-  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
