@@ -8,7 +8,6 @@
     }
     
  ?>
-
 <link href="../css/style.css" rel="stylesheet">
 <body>
   <div class="site-wrapper">
@@ -16,7 +15,7 @@
       <div class="cover-container">
         <div class="masthead clearfix">
           <div class="inner">
-          <a href="index.php"><img class="nav-logo" src="../ressources/logo_quiz.png"/></a>
+             <a href="index.php"><img class="nav-logo" src="../img/logo_quiz.png"/></a>
            <?php
             if (isset($_SESSION['Auth']) && !empty($_SESSION['Auth']))
             {?>
@@ -51,7 +50,7 @@
                     ?>
                 </div>
                 <div class="col-sm-6 col-home-right">
-                    <img class="img-home" src="../ressources/think.png" />
+                    <img class="img-home" src="../img/think.png" />
                 </div>
             </div>
         </div>
