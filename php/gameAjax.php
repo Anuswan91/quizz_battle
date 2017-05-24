@@ -1,6 +1,6 @@
 <?php
 	include "../includes/DB.php";
-	header('Content-Type: application/json; charset=utf-8');
+	//header('Content-Type: application/json; charset=utf-8');
 
 	function getFocusedQuestion($idGame) {
 		include "../includes/DB.php";
@@ -23,18 +23,18 @@
 								VALUES ('".$idGame."', '".$idPlayer."', '".$idAnswer."')");
 	}
 
-	function getScore($idGame, $idAnswer) {
+	function getScore($idGame, $idAnswer, $idQuestion) {
 		include "../includes/DB.php";
 
-		$cpt = 0;
+		/*$cpt = 0;
 		while ($cpt < 5 && !isEverybodyAnswerFocusedQuestion($idGame) ) {
 			sleep(1);
 			$cpt++;
-		}
+		}*/
 		
-		$question = getQuestionByAnswer($idAnswer);
+		incrementFocus($idGame, $idQuestion);
 		
-		incrementFocus($idGame, $question['qst_id']);
+		//incrementFocus($idGame, $question['qst_id']);
 
 		return getScoreByGame($idGame);
 	}
@@ -161,11 +161,12 @@
 		sendAnswer($idGame, $idPlayer, $idAnswer);
 	}
 	//get score
-	elseif (isset($_GET['gs']) && isset($_GET['idGame']) && isset($_GET['idAnswer'])) {
+	elseif (isset($_GET['gs']) && isset($_GET['idGame']) && isset($_GET['idAnswer']) && isset($_GET['idQuestion']) ) {
 		$idGame = $_GET['idGame'];
 		$idAnswer = $_GET['idAnswer'];
+		$idQuestion = $_GET['idQuestion'];
 		
-		$data = getScore($idGame, $idAnswer);
+		$data = getScore($idGame, $idAnswer, $idQuestion);
 	}
 	
 	echo json_encode( $data );
