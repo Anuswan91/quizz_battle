@@ -2,8 +2,23 @@ body, html{
     height: 100%;
 }
 
-.progress {
+.btn-leave:hover, .btn-leave:active, .btn-leave:focus{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-leave{
+    margin-top: 50px;
+    width: 25%;
+    text-align: center;
+}
+
+.nav-login {
     width: 70%;
+}
+
+.progress {
+    width: 60%;
     height: 30px;
     font-size: 30px;
 }
