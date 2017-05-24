@@ -8,7 +8,8 @@ body, html{
 }
 
 .btn-leave{
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-bottom: 10px;
     width: 25%;
     text-align: center;
 }
@@ -34,7 +35,9 @@ body, html{
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
+    .inner{
+        padding-bottom: 5px !important;
+    }
     .col-room-left{
         margin-top: 40px;
     }

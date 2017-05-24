@@ -1,0 +1,123 @@
+
+h1{
+    color: #fff;
+}
+
+.nav-login {
+    width: 70%;
+}
+
+.progress {
+    width: 60%;
+    height: 30px;
+    font-size: 30px;
+}
+
+.progress-bar{
+    font-size: 22px;
+    padding-top: 5px;
+}
+
+.col-question{
+    width: 80%;
+    height: 80px;
+    margin: 20px auto;
+    line-height: 60px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 17px;
+    text-transform: none;
+}
+
+.qst-selected-ok{
+    background-color: #4cae4c;
+    border: 1px solid #3d7e3d;
+    box-shadow: inset 0 1px 0 #63d163;
+}
+
+.qst-selected-ok:hover{
+    background-color: #4cae4c;
+    color: #fff;
+}
+
+.qst-selected-nok{
+    background-color: #FF4444;
+    border: 1px solid #C93737;
+    box-shadow: inset 0 1px 0 #FF0E0C;
+}
+
+.qst-selected-nok:hover{
+    background-color: #FF4444;
+    color: #fff;
+}
+
+.qst-disabled{
+    background-color: #691c1c;
+    border: 1px solid #561616;
+    box-shadow: inset 0 1px 0 #850907;
+    color: #9b9b9b;
+}
+
+.qst-disabled:hover{
+    background-color: #691c1c;
+    color: #9B9B9B;
+}
+
+.qst-disabled-ok{
+    background-color: #357035;
+    border: 1px solid #274e27;
+    box-shadow: inset 0 1px 0 #489d48;
+    color: #9B9B9B;
+}
+
+.qst-disabled-ok:hover{
+    background-color: #357035;
+    color: #9B9B9B;
+}
+
+#z{
+    padding-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .col-question{
+        height: 50px;
+        line-height: 30px;
+        margin: 10px auto;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .inner{
+        padding-bottom: 5px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .site-wrapper-inner {
+        vertical-align: middle;
+    }
+}
+
+.score-container{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.score-indiv{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 20px;
+}
+
+.score{
+    display: inline;
+    border-radius: 50%;
+    margin:auto;
+    margin-bottom: 10px;
+    background-color: rgba(183, 42, 42, 1);
+    color: #fff;
+    padding: 40px 100px 200px 100px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+}

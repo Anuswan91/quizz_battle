@@ -1,78 +1,93 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Quizz Battle</title>
-	</head>
+<?php
+include '../includes/header.php';
+include '../php/Notif.php';
+?>
+<link href="../css/styleGame.css" rel="stylesheet">
+<body>
+<div class="site-wrapper">
+	<div class="site-wrapper-inner">
+		<div class="cover-container">
+			<div class="masthead clearfix">
+				<div class="inner">
+					<a href="index.php"><img class="nav-logo" src="../img/logo_quiz.png"/></a>
+					<div class="nav-login progress">
+						<div id="time-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+							 aria-valuemin="0" aria-valuemax="100" style="width:40%">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inner cover">
+				<div class="row home-container">
+					<div class="col-sm-12" id="z"><h1>Quelle groupe est passé à Point gamma pour l'édition 2017 ?</h1></div>
+				</div>
+				<div id="ans-container">
+					<div class="row home-container">
+						<div class="col-sm-6"><div class="col-question btn-home qst-disabled-ok" id="0" onclick="notif('En attente des autres joueurs ...', 3);">Salut</div></div>
+						<div class="col-sm-6"><div class="col-question btn-home qst-disabled" id="1" onclick="notif('En attente des autres joueurs ...', 3);">C'est</div></div>
+					</div>
+					<div class="row home-container">
+						<div class="col-sm-6"><div class="col-question btn-home qst-selected-nok" id="2" onclick="notif('En attente des autres joueurs ...', 3);">Cool</div></div>
+						<div class="col-sm-6"><div class="col-question btn-home qst-selected-ok" id="3" onclick="notif('En attente des autres joueurs ...', 3);">Lol</div></div>
+					</div>
+				</div>
+			</div>
+			<div class="score-container">
+				<table class="score">
+					<tr>
+						<td class="score-indiv" id="score1">1
+						</td>
+						<td class="score-indiv" id="score2">2
+						</td>
+						<td class="score-indiv" id="score3">3
+						</td>
+						<td class="score-indiv" id="score4">4
+						</td>
+						<td class="score-indiv" id="score5">5
+						</td>
+					</tr>
+					<tr>
+						<td class="score-name" id="name1">Me
+						</td>
+						<td class="score-name" id="name2">J1
+						</td>
+						<td class="score-name" id="name3">J2
+						</td>
+						<td class="score-name" id="name4">J3
+						</td>
+						<td class="score-name" id="name5">J4
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+include '../includes/footer.php';
+?>
+<script type="text/javascript">
+	var time = 10;
+	var timePercent = time * 100 / 10;
 
-	<body>
-		<?php
-			include "../php/gameController.php"; //Connexion a la base de données
-		?>
+	var $divTime = $('#time-bar');
+	if ($divTime){
+		$divTime.attr('aria-valuenow', timePercent);
+		$divTime.css('width', timePercent + '%');
+	}
 
-		<div id="question"></div>
-
-		<button id = '0' name='0' type='submit' onclick="answer()"></button>
-		<button id = '1' name='1' type='submit' onclick="answer()"></button>
-		<button id = '2' name='2' type='submit' onclick="answer()"></button>
-		<button id = '3' name='3' type='submit' onclick="answer()"></button>
-	</body>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-	<script type="text/javascript">
-
-		question_number = 0;
-
-		function answer() {
-
-			switch (answer.caller.arguments[0].target.name) {
-				case "0":
-					var answer_status = '<?php echo $res_answer[$rand_answer[0]]['ans_correct']; ?>';
-					break;
-				case "1":
-					var answer_status = '<?php echo $res_answer[$rand_answer[1]]['ans_correct']; ?>';
-					break;
-				case "2":
-					var answer_status = '<?php echo $res_answer[$rand_answer[2]]['ans_correct']; ?>';
-					break;
-				case "3":
-					var answer_status = '<?php echo $res_answer[$rand_answer[3]]['ans_correct']; ?>';
-					break;
-			}
-			
-			if (answer_status == 1) {
-				alert("GG !");
-			}
-
-			else {
-				alert("Mauvais...");
-			}
-
-			next_question();
-		}  
-
-		function next_question() {
-
-			var question_number = 0;
-
-			/*$.ajax({
-  				url: '../php/gameController.php',
-  				data: 'question_number='+ question_number
-			});
-			*/
-
-			
-			document.getElementById('question').innerHTML = '<?php echo $res_question[$question_number]['qst_text'];?>';
-			document.getElementById('0').innerHTML = '<?php echo $res_answers[$question_number][0]['ans_text']?>';
-			document.getElementById('1').innerHTML = '<?php echo $res_answers[$question_number][1]['ans_text']?>';
-			document.getElementById('2').innerHTML = '<?php echo $res_answers[$question_number][2]['ans_text']?>';
-			document.getElementById('3').innerHTML = '<?php echo $res_answers[$question_number][3]['ans_text']?>';
-			
-
-			question_number ++;
+	interval = setInterval(function(){
+		time-=1/10;
+		timePercent = time * 100 / 10;
+		if ($divTime){
+			$divTime.attr('aria-valuenow', timePercent);
+			$divTime.css('width', timePercent + '%');
 		}
+		if(time <= 0){
+			time = 10;
+		}
+	},100);
 
-		next_question();
-	</script>
+</script>
+</body>
 </html>
