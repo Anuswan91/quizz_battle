@@ -2,6 +2,7 @@
 include '../includes/header.php';
 include '../php/Notif.php';
 include '../php/RoomController.php';
+
 ?>
 <link href="../css/styleRoom.css" rel="stylesheet">
 <body>
@@ -12,8 +13,8 @@ include '../php/RoomController.php';
                 <div class="inner">
                     <img class="nav-logo" src="../img/logo_quiz.png"/>
                     <div class="nav-login progress">
-                        <div id="time-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                             aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        <div id="time-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
+                             aria-valuemin="0" aria-valuemax="100" style="width:100%">
                         </div>
                     </div>
                 </div>
@@ -56,11 +57,13 @@ include '../php/RoomController.php';
 <?php
 include '../includes/footer.php';
 ?>
+<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
-    var time = <?php echo $time['time']; ?> ;
+    var time = <?php echo $time['time']; ?>;
+
     time = 45 - time;
     var timePercent = time * 100 / 45;
-
+alert(<?php echo json_encode($_SESSION['Game']['gme_id']) ?>);
     var $divTime = $('#time-bar');
     if ($divTime){
         $divTime.attr('aria-valuenow', timePercent);
@@ -77,7 +80,20 @@ include '../includes/footer.php';
         if(time <= 0){
             clearInterval(interval);
             clearInterval(joueurs);
-            window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+            //window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+
+            var arrayFromPHP = <?php echo json_encode($themes) ?>;
+          /* $.each(arrayFromPHP, function (i, elem) {
+                alert(elem['thm_id']);
+                var idTheme = elem['thm_id'];
+                alert($('#'+idTheme).value);
+                if($('#'+idTheme).selected)
+                {
+                 alert('kjehzfj');
+                }
+            });*/
+
+           window.location = window.location.origin + "/quizz_battle/php/gameInitController.php";
         }
     },100);
 
@@ -121,10 +137,10 @@ include '../includes/footer.php';
     //Permet d'afficher la liste des joueur dynamiquement
     function affichageListeJoueur(data){
         if(data.length > 0){
-            console.log(data);
             document.getElementById('player').innerHTML = data;
         }
     }
+    
 </script>
 </body>
 </html>

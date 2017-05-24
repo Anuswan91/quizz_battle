@@ -1,6 +1,6 @@
 <?php
 	include "../includes/DB.php";
-	header('Content-Type: application/json; charset=utf-8');
+	//header('Content-Type: application/json; charset=utf-8');
 
 	function getFocusedQuestion($idGame) {
 		include "../includes/DB.php";
@@ -21,20 +21,42 @@
 
 		$query = $bdd->query("INSERT INTO player_has_answer (`pha_game_id`, `pha_player_id`, `pha_answer_id`) 
 								VALUES ('".$idGame."', '".$idPlayer."', '".$idAnswer."')");
+
+		$query = $bdd->query("	SELECT ans_id, ans_correct
+								FROM player_has_answer
+								INNER JOIN answer ON ans_id = pha_answer_id
+								WHERE pha_player_id = '".$idPlayer."'
+									AND ans_id = '".$idAnswer."'
+								    AND pha_game_id = '".$idGame."'
+								    AND ans_correct = 1");
+
+		$correct = (bool) $query->fetch();
+
+		$query = $bdd->query("	SELECT a.ans_id
+								FROM answer tmp
+								INNER JOIN question ON qst_id = tmp.ans_question_id
+								INNER JOIN answer a ON qst_id = a.ans_question_id
+								WHERE tmp.ans_id = '".$idAnswer."'
+									AND a.ans_correct = 1");
+		
+		$correctAnswer = $query->fetch();
+
+		return array('correct' => $correct, 'answer' => $correctAnswer['ans_id']);
+
 	}
 
-	function getScore($idGame, $idAnswer) {
+	function getScore($idGame, $idAnswer, $idQuestion) {
 		include "../includes/DB.php";
 
-		$cpt = 0;
+		/*$cpt = 0;
 		while ($cpt < 5 && !isEverybodyAnswerFocusedQuestion($idGame) ) {
 			sleep(1);
 			$cpt++;
-		}
+		}*/
 		
-		$question = getQuestionByAnswer($idAnswer);
+		//incrementFocus($idGame, $idQuestion);
 		
-		incrementFocus($idGame, $question['qst_id']);
+		//incrementFocus($idGame, $question['qst_id']);
 
 		return getScoreByGame($idGame);
 	}
@@ -158,14 +180,21 @@
 		$idPlayer = $_GET['idPlayer'];
 		$idAnswer = $_GET['idAnswer'];
 
-		sendAnswer($idGame, $idPlayer, $idAnswer);
+		$data = sendAnswer($idGame, $idPlayer, $idAnswer);
 	}
 	//get score
-	elseif (isset($_GET['gs']) && isset($_GET['idGame']) && isset($_GET['idAnswer'])) {
+	elseif (isset($_GET['gs']) && isset($_GET['idGame']) && isset($_GET['idAnswer']) && isset($_GET['idQuestion']) ) {
 		$idGame = $_GET['idGame'];
 		$idAnswer = $_GET['idAnswer'];
+		$idQuestion = $_GET['idQuestion'];
 		
-		$data = getScore($idGame, $idAnswer);
+		$data = getScore($idGame, $idAnswer, $idQuestion);
+	}
+	elseif (isset($_GET['if']) && isset($_GET['idGame']) && isset($_GET['idQuestion']) ) {
+		$idGame = $_GET['idGame'];
+		$idQuestion = $_GET['idQuestion'];
+		
+		incrementFocus($idGame, $idQuestion);
 	}
 	
 	echo json_encode( $data );

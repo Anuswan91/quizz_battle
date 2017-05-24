@@ -36,7 +36,6 @@
 
      	//Si le joueur est un guest on supprimer ses identifiants
      	if($guest['plr_guest'] == 1){
-     		var_dump("passe");
      		unset($_SESSION['Auth']['plr_id']);
      		unset($_SESSION['Auth']['plr_pseudo']);
      	}
