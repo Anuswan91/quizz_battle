@@ -56,6 +56,7 @@ include '../php/RoomController.php';
 <?php
 include '../includes/footer.php';
 ?>
+<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
     var time = <?php echo $time['time']; ?> ;
     time = 45 - time;
@@ -77,7 +78,7 @@ include '../includes/footer.php';
         if(time <= 0){
             clearInterval(interval);
             clearInterval(joueurs);
-            window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+            //window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
         }
     },100);
 
@@ -121,10 +122,10 @@ include '../includes/footer.php';
     //Permet d'afficher la liste des joueur dynamiquement
     function affichageListeJoueur(data){
         if(data.length > 0){
-            console.log(data);
             document.getElementById('player').innerHTML = data;
         }
     }
+    
 </script>
 </body>
 </html>
