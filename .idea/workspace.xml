@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="276a8789-68d6-4bc4-bc96-a8be9b588181" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/gameInitController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styleGame.css" afterPath="$PROJECT_DIR$/css/styleGame.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/RoomView.php" afterPath="$PROJECT_DIR$/pages/RoomView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/gameView.php" afterPath="$PROJECT_DIR$/pages/gameView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/gameAjax.php" afterPath="$PROJECT_DIR$/php/gameAjax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/gameController.php" afterPath="$PROJECT_DIR$/php/gameController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/joinRoom.php" afterPath="$PROJECT_DIR$/php/joinRoom.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/leaveRoomController.php" afterPath="$PROJECT_DIR$/php/leaveRoomController.php" />
     </list>
     <ignored path="quizz_battle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoomView.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RoomView.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/RoomView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="122" selection-start-line="15" selection-start-column="122" selection-end-line="15" selection-end-column="122" />
+            <state relative-caret-position="-432">
+              <caret line="90" column="106" selection-start-line="90" selection-start-column="106" selection-end-line="90" selection-end-column="106" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -88,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameView.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gameView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/gameView.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -127,10 +118,10 @@
         <option value="$PROJECT_DIR$/php/listeJoueurRoom.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/php/gameController.php" />
-        <option value="$PROJECT_DIR$/pages/RoomView.php" />
         <option value="$PROJECT_DIR$/css/styleRoom.css" />
         <option value="$PROJECT_DIR$/css/styleGame.css" />
         <option value="$PROJECT_DIR$/pages/gameView.php" />
+        <option value="$PROJECT_DIR$/pages/RoomView.php" />
       </list>
     </option>
   </component>
@@ -303,12 +294,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495551659338</updated>
-      <workItem from="1495551660536" duration="26670000" />
+      <workItem from="1495551660536" duration="26783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26670000" />
+    <option name="totallyTimeSpent" value="26783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -430,17 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/RoomView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="122" selection-start-line="15" selection-start-column="122" selection-end-line="15" selection-end-column="122" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/styleGame.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
@@ -471,6 +451,17 @@
           <caret line="199" column="21" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/RoomView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="90" column="106" selection-start-line="90" selection-start-column="106" selection-end-line="90" selection-end-column="106" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
