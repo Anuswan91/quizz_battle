@@ -67,4 +67,4 @@ $_SESSION['Auth']['plr_pseudo'] = NULL;
 			print_r("File joinRoom.php insert game_has_player : " . $bdd->errorInfo());
 	}
 
-	//header('Location: ../pages/roomView.php');
+	header('Location: ../pages/roomView.php');

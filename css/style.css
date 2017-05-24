@@ -17,7 +17,7 @@ body {
     height: 100%;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
-    background-image: url('../ressources/fond.png');
+    background-image: url('../img/fond.png');
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -64,17 +64,6 @@ body {
     z-index: 2;
 }
 
-@media (min-width: 768px) {
-    .nav-logo {
-        float: left;
-    }
-    .nav-login {
-        margin-top: 10px;
-        float: right;
-    }
-}
-
-
 /*
  * Cover
  */
@@ -85,31 +74,6 @@ body {
 .cover .btn-lg {
     padding: 10px 20px;
     font-weight: bold;
-}
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-    /* Pull out the header and footer */
-    .masthead {
-        position: fixed;
-        top: 0;
-    }
-    .footer {
-        position: fixed;
-        bottom: 0;
-    }
-    /* Start the vertical centering */
-    .site-wrapper-inner {
-        vertical-align: bottom;
-    }
-    /* Handle the widths */
-    .masthead,
-    .footer,
-    .cover-container {
-        width: 100%; /* Must be percentage or pixels for horizontal alignment */
-    }
 }
 
 /*
@@ -163,23 +127,6 @@ body {
     vertical-align: middle;
 }
 
-@media (max-width: 500px) {
-    .btn-go{
-        text-align: center;
-        background: #A92626;
-        margin-right: 5px;
-    }
-    .login-text {
-        margin-bottom: 6px;
-    }
-    .nav-login {
-        display: inline-grid;
-    }
-    .nav-logo{
-         margin-bottom: 10px;
-    }
-}
-
 /*
 *Button home
 */
@@ -221,33 +168,6 @@ body {
 h1{
     margin-bottom: 20px;
     color: #d4d4d4;
-}
-
-@media (min-width: 768px) {
-    .col-home-left {
-        text-align: left;
-        padding-left: 70px;
-    }
-
-    .img-home, .col-home-left{
-        padding-top:120px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .img-home {
-        display: none;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .nav-login a, .nav-login span{
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-        margin-top: 5px;
-    }
 }
 
 .col-home-left{
@@ -309,4 +229,74 @@ h1{
 
 .nav-login a{
     margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .img-home {
+        display: none;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .nav-login a, .nav-login span{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-logo {
+        float: left;
+    }
+    .nav-login {
+        margin-top: 10px;
+        float: right;
+    }
+    /* Pull out the header and footer */
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+        vertical-align: bottom;
+    }
+    /* Handle the widths */
+    .masthead,
+    .footer,
+    .cover-container {
+        width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+    .col-home-left {
+        text-align: left;
+        padding-left: 70px;
+    }
+
+    .img-home, .col-home-left{
+        padding-top:120px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .btn-go{
+        text-align: center;
+        background: #A92626;
+        margin-right: 5px;
+    }
+    .login-text {
+        margin-bottom: 6px;
+    }
+    .nav-login {
+        display: inline-grid;
+    }
+    .nav-logo{
+        margin-bottom: 10px;
+    }
 }

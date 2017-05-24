@@ -1,7 +1,7 @@
 <div class="container-info">
     <div class="div-info-base alert" id="info-base">
         <span class="txt-info"></span>
-        <img class="img-info" onclick="closeInfoMsg();" height="15px" src="../ressources/close.png"/>
+        <img class="img-info" onclick="closeInfoMsg();" height="15px" src="../img/close.png"/>
     </div>
 </div>
 <script>

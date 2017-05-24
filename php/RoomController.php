@@ -17,14 +17,14 @@
 								FROM game_has_player ghp
 								INNER JOIN player p ON p.plr_id = ghp.ghp_player_id
 								WHERE ghp_game_id =".intval($_SESSION['Game']['gme_id']));
-	}
 
-	$listJoueur = $query->fetchAll();
+		$listJoueur = $query->fetchAll();
 
-	$themes = $bdd->query("SELECT *
+		$themes = $bdd->query("SELECT *
 						   FROM theme");
 
-	$themes = $themes->fetchAll();
+		$themes = $themes->fetchAll();
+	}
 
 /*	$base = new EventBase();
 	$n = 2;

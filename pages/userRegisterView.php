@@ -14,7 +14,7 @@ include '../php/Notif.php';
     <div class="cover-container">
       <div class="masthead clearfix">
         <div class="inner">
-          <a href="index.php"><img class="nav-logo" src="../ressources/logo_quiz.png"/></a>
+          <a href="index.php"><img class="nav-logo" src="../img/logo_quiz.png"/></a>
         </div>
       </div>
       <div class="inner cover">
