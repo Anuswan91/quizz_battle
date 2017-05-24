@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include '../includes/header.php';
 include '../php/Notif.php';
@@ -35,7 +36,7 @@ include '../php/RoomController.php';
                         </div>
                     </div>
                     <div class="col-sm-6 col-room-right">
-                        <h1>Joueurs (<?php echo $listJoueur['0']['nb_player'];?>):</h1>
+                        <h1>Joueurs (<?php echo $query->rowCount();?>):</h1>
                         <div class="list-group">
                             <?php
                             foreach ($listJoueur as $key => $value) {
@@ -47,10 +48,75 @@ include '../php/RoomController.php';
                         </div>
                     </div>
                 </div>
+                <div id="time"></div>
+                <div id="player"></div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var time = <?php echo $time['time']; ?> ;
+
+    time = 45 - time;
+
+    var div = document.getElementById("time");
+    div.innerHTML = time + "s";
+
+    interval = setInterval(function(){
+        time--
+        div.innerHTML = time + "sec";
+        if(time <= 0){
+            clearInterval(interval);
+            clearInterval(joueurs);
+            window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+        }
+    },1000);
+
+    //Objet AJax
+    function getXMLHttpRequest() {
+        var xhr = null;
+
+        if (window.XMLHttpRequest || window.ActiveXObject) {
+            if (window.ActiveXObject) {
+                try {
+                    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch(e) {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            } else {
+                xhr = new XMLHttpRequest();
+            }
+        } else {
+            alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+            return null;
+        }
+        return xhr;
+    }
+
+
+    var joueurs = setInterval('requestListeJoueur(affichageListeJoueur)',1500);
+    //Affiche la liste des joueurs
+    function requestListeJoueur(callback) {
+        var xhr = getXMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+                callback(xhr.responseText);
+            }
+        };
+        //var msg = encodeURIComponent(document.getElementById("barre-msg").value);
+        xhr.open("GET", "../php/listeJoueurRoom.php", true);
+        xhr.send(null);
+    }
+
+    //Permet d'afficher la liste des joueur dynamiquement
+    function affichageListeJoueur(data){
+        if(data.length > 0){
+            console.log(data);
+            document.getElementById('player').innerHTML = data;
+        }
+    }
+</script>
 <?php
 include '../includes/footer.php';
 ?>

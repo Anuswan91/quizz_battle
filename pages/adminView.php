@@ -6,6 +6,7 @@ include '../includes/header.php';
 <!-- Formulaire nouveau thème -->
 <form action="../php/adminController.php" method="post">
   <input type="text" placeholder="Thème" name="nt_theme" required>
+  <input type="color" value="#FFFFFF" name="nt_color" required>
   <input type="submit" value="Submit">
 </form>
 
@@ -20,7 +21,7 @@ include '../includes/header.php';
   	foreach ($themes as $theme) {
 		echo '<tr>';
 		echo '<td>'.$theme['thm_id'].'</td>';
-		echo '<td>'.$theme['thm_name'].'</td>';
+		echo '<td bgcolor="'.$theme['thm_color'].'">'.$theme['thm_name'].'</td>';
 		echo '<td>';
 		echo '<a href="../php/adminController.php?dt='.$theme['thm_id'].'">';
 		echo '<span class="glyphicon glyphicon-trash">';
