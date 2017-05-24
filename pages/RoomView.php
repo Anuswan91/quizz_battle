@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 <?php
 include '../includes/header.php';
 include '../php/Notif.php';
 include '../php/RoomController.php';
+
 ?>
 <link href="../css/styleRoom.css" rel="stylesheet">
 <body>
@@ -12,17 +12,16 @@ include '../php/RoomController.php';
             <div class="masthead clearfix">
                 <div class="inner">
                     <a href="index.php"><img class="nav-logo" src="../img/logo_quiz.png"/></a>
+                    <div class="nav-login progress">
+                        <div id="time-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                             aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="inner cover">
                 <div class="row home-container">
                     <div class="col-sm-6 col-room-left">
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                                40 sec
-                            </div>
-                        </div>
                         <h1>Sélectionner votre théme:</h1>
                         <div class="funkyradio">
                             <?php
@@ -30,12 +29,12 @@ include '../php/RoomController.php';
                                 ?>
                                 <div class="funkyradio-success">
                                     <input type="radio" name="radio" id="<?php echo $value['thm_id']; ?>" />
-                                    <label for="<?php echo $value['thm_id']; ?>" style="background-color: #333;"><?php echo $value['thm_name']; ?></label>
+                                    <label for="<?php echo $value['thm_id']; ?>" style="background-color: <?php echo $value['thm_color']; ?>; opacity:0.7;"><?php echo $value['thm_name']; ?></label>
                                 </div>
                                 <?php }?>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-room-right">
+                    <div class="col-sm-6 col-room-right" id="player">
                         <h1>Joueurs (<?php echo $query->rowCount();?>):</h1>
                         <div class="list-group">
                             <?php
@@ -48,29 +47,55 @@ include '../php/RoomController.php';
                         </div>
                     </div>
                 </div>
-                <div id="time"></div>
-                <div id="player"></div>
+                <div class="row home-container">
+                    <a href="../php/leaveRoomController.php" class="btn-home btn-leave">QUITTER</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<?php
+include '../includes/footer.php';
+?>
+<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
-    var time = <?php echo $time['time']; ?> ;
+    var time = <?php echo $time['time']; ?>;
 
     time = 45 - time;
-
-    var div = document.getElementById("time");
-    div.innerHTML = time + "s";
+    var timePercent = time * 100 / 45;
+alert(<?php echo json_encode($_SESSION['Game']['gme_id']) ?>);
+    var $divTime = $('#time-bar');
+    if ($divTime){
+        $divTime.attr('aria-valuenow', timePercent);
+        $divTime.css('width', timePercent + '%');
+    }
 
     interval = setInterval(function(){
-        time--
-        div.innerHTML = time + "sec";
+        time-=1/10;
+        timePercent = time * 100 / 45;
+        if ($divTime){
+            $divTime.attr('aria-valuenow', timePercent);
+            $divTime.css('width', timePercent + '%');
+        }
         if(time <= 0){
             clearInterval(interval);
             clearInterval(joueurs);
-            window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+            //window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+
+            var arrayFromPHP = <?php echo json_encode($themes) ?>;
+          /* $.each(arrayFromPHP, function (i, elem) {
+                alert(elem['thm_id']);
+                var idTheme = elem['thm_id'];
+                alert($('#'+idTheme).value);
+                if($('#'+idTheme).selected)
+                {
+                 alert('kjehzfj');
+                }
+            });*/
+
+           //window.location = window.location.origin + "/quizz_battle/php/gameInitController.php";
         }
-    },1000);
+    },100);
 
     //Objet AJax
     function getXMLHttpRequest() {
@@ -112,13 +137,10 @@ include '../php/RoomController.php';
     //Permet d'afficher la liste des joueur dynamiquement
     function affichageListeJoueur(data){
         if(data.length > 0){
-            console.log(data);
             document.getElementById('player').innerHTML = data;
         }
     }
+    
 </script>
-<?php
-include '../includes/footer.php';
-?>
 </body>
 </html>

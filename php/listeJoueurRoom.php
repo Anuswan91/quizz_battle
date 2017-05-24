@@ -21,19 +21,18 @@
                                 AND ghp_game_id =".intval($_SESSION['Game']['gme_id']));
 
         $listJoueur = $query->fetchAll();
-        ?><h2>Nombre de joueur :
-                <?php
-                    echo $query->rowCount();
-                 ?> 
-            </h2>
-            <ul id="player_list">
-        <?php
-        //On récupère ka liste des joueurs et le nombre
-        
-    	foreach ($listJoueur as $key => $value) {
-            echo '<li>' . $value['plr_pseudo'] . '</li>';
-        }
-        $query->closeCursor();
-    }
         ?>
-            </ul>
+
+
+<h1>Joueurs (<?php echo $query->rowCount();?>):</h1>
+<div class="list-group">
+    <?php
+    foreach ($listJoueur as $key => $value) {
+        ?>
+        <a class="list-group-item"><?php echo $value['plr_pseudo']; ?></a>
+        <?php
+    }
+    $query->closeCursor();
+    }
+    ?>
+</div>

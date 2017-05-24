@@ -33,7 +33,7 @@
 	$room = $bdd->query("SELECT gme_id
 						 FROM game
 						 WHERE gme_state_id = 1
-						 AND gme_nb_player <= 5
+						 AND gme_nb_player < 5
                          LIMIT 1");
 /*	var_dump($room->rowCount());
 	var_dump($room->fetch());*/
