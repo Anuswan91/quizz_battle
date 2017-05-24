@@ -81,7 +81,8 @@ include '../includes/footer.php';
 			url: '../php/gameAjax.php?sa&idGame='+idGame+'&idPlayer='+idPlayer+'&idAnswer='+idAnswer,
 			dataType: 'JSON',
 			success: function(data) {
-				//disable_button()
+				disable_button()
+				highlight_button(data, idAnswer)
 				console.log(data)
 				// TODO changer les class pour la réponse
 				//document.getElementById(idAnswer).disabled = true
@@ -89,10 +90,31 @@ include '../includes/footer.php';
 		});
 	}
 
+	function highlight_button(data, idAnswer) {
+		//alert('de')
+		//document.getElementById('1').innerHTML = 'disabled';
+		if (data['correct']) {
+			$('#'+data['answer']).removeClass('qst-disabled')
+			$('#'+data['answer']).addClass('qst-selected-ok')
+		}
+		else{
+			$('#'+data['answer']).removeClass('qst-disabled')
+			$('#'+data['answer']).addClass('qst-disabled-ok')
+			console.log(idAnswer)
+			$('#'+idAnswer).removeClass('qst-disabled')
+			$('#'+idAnswer).addClass('qst-selected-nok')
+		}
+		//$('.col-question').addClass('qst-disabled');
+		//TODO remove onclick
+		//$('.col-question').removeClass('qst-disabled');
+	}
+
 	function disable_button() {
 		//alert('de')
-		document.getElementById('1').innerHTML = 'disabled';
-		$('2').html('disabled');
+		//document.getElementById('1').innerHTML = 'disabled';
+		$('.col-question').addClass('qst-disabled');
+		//TODO remove onclick
+		//$('.col-question').removeClass('qst-disabled');
 	}
 
 	function clock() {
