@@ -1,5 +1,6 @@
 <?php
 	include "../includes/DB.php";
+	header('Content-Type: application/json; charset=utf-8');
 
 	function getFocusedQuestion($idGame) {
 		include "../includes/DB.php";
