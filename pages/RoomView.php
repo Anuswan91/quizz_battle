@@ -46,6 +46,9 @@ include '../php/RoomController.php';
                         </div>
                     </div>
                 </div>
+                <div class="row home-container">
+                    <a href="../php/leaveRoomController.php" class="btn-home btn-leave">QUITTER</a>
+                </div>
             </div>
         </div>
     </div>
