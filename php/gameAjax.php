@@ -1,5 +1,6 @@
 <?php
 	include "../includes/DB.php";
+	header('Content-Type: application/json; charset=utf-8');
 
 	function getFocusedQuestion($idGame) {
 		include "../includes/DB.php";
@@ -26,15 +27,11 @@
 		include "../includes/DB.php";
 
 		$cpt = 0;
-		// TODO
-		// récupérer l'id de la question 
-		// incrémenter le focus à la question suivante (par rapport à id question)
-		/*while ($cpt < 5 && !isEverybodyAnswerFocusedQuestion($idGame) ) {
+		while ($cpt < 5 && !isEverybodyAnswerFocusedQuestion($idGame) ) {
 			sleep(1);
 			$cpt++;
 		}
-		//on incrémente le focus
-		*/
+		
 		$question = getQuestionByAnswer($idAnswer);
 		
 		incrementFocus($idGame, $question['qst_id']);
@@ -97,7 +94,7 @@
 				$search = true;
 			}
 		}
-		//var_dump($questionOldFocus);
+		
 		$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '0' 
 								WHERE `ghq_game_id` = '".$idGame."' 
 									AND `ghq_question_id` = '".$questionOldFocus."'");
@@ -110,33 +107,6 @@
 									WHERE `ghq_game_id` = '".$idGame."' 
 										AND `ghq_question_id` = '".$questionNewFocus."'");
 		}
-		/*$search = false;
-		$questionNewFocus = NULL;
-		$questionOldFocus = NULL;
-		foreach ($query->fetchAll() as $el) {
-			var_dump($el);
-			if ($search == true) {
-				$search = false;
-				$questionNewFocus = $el['ghq_question_id'];
-			}
-			if ($el['ghq_focus']) {
-				$search = true;
-				$questionOldFocus = $el['ghq_question_id'];
-			}
-		}*/
-		//update old focus
-		/*$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '0' 
-								WHERE `ghq_game_id` = '".$idGame."' 
-									AND `ghq_question_id` = '".$questionOldFocus."'");
-		if (!$search && $questionNewFocus == NULL) {
-			//fin du game
-		}
-		else {
-			//Update new focus
-			$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '1' 
-									WHERE `ghq_game_id` = '".$idGame."' 
-										AND `ghq_question_id` = '".$questionNewFocus."'");
-		}*/
 	}
 
 	// Fonction pour récupérer le nombre de personne ayant répondu à la focused question
@@ -197,10 +167,6 @@
 		
 		$data = getScore($idGame, $idAnswer);
 	}
-
-	//sleep(3);
-
-	
 	
 	echo json_encode( $data );
 ?>
