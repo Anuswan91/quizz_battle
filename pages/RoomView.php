@@ -2,6 +2,7 @@
 include '../includes/header.php';
 include '../php/Notif.php';
 include '../php/RoomController.php';
+
 ?>
 <link href="../css/styleRoom.css" rel="stylesheet">
 <body>
@@ -55,7 +56,8 @@ include '../includes/footer.php';
 ?>
 <script type="text/javascript">
     var time = <?php echo $time['time']; ?> ;
-    time = 45 - time;
+    console.log(time)
+    time = 1133044 - time;
     var timePercent = time * 100 / 45;
 
     var $divTime = $('#time-bar');
@@ -74,7 +76,18 @@ include '../includes/footer.php';
         if(time <= 0){
             clearInterval(interval);
             clearInterval(joueurs);
-            window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+            var arrayFromPHP = <?php echo json_encode($themes) ?>;
+           $.each(arrayFromPHP, function (i, elem) {
+                alert(elem['thm_id']);
+                var idTheme = elem['thm_id'];
+                alert($('#'+idTheme).value);
+                if($('#'+idTheme).selected)
+                {
+                 alert('kjehzfj');
+                }
+            });
+
+           //window.location = window.location.origin + "/quizz_battle/php/gameInitController.php";
         }
     },100);
 
