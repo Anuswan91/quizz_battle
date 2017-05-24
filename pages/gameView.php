@@ -39,7 +39,7 @@
   				url: '../php/gameAjax.php?sa&idGame='+idGame+'&idPlayer='+idPlayer+'&idAnswer='+idAnswer,
   				dataType: 'JSON',
   				success: function(data) {
-  					//console.log('toto')
+  					console.log(data)
   					// TODO recevoir bool pour réponse
   					//document.getElementById(idAnswer).disabled = true
   				}
@@ -48,17 +48,16 @@
 
 		function clock() {
 			var div = document.getElementById("time");
-			defaultTime = 7
+			defaultTime = 10
 			time = defaultTime
 		    div.innerHTML = time + "s";
-
+		    
 		    interval = setInterval(function(){
 		        time--
+		        set_score();
 		        div.innerHTML = time + " sec";
 		        if(time <= 0){
-		            //clearInterval(interval)
-		            //console.log('answer :', idAnswer)
-		            set_score()      
+		            increment_focus()      
 		            next_question()
 		            time = defaultTime
 		        }
@@ -66,16 +65,31 @@
 		    },1000);
 		}
 
+		function increment_focus() {
+			idGame = <?php echo $gme_id; ?>;
+			//console.log("test incrementation")
+			$.ajax({
+  				url: '../php/gameAjax.php?if&idGame='+idGame+'&idQuestion='+idQuestion,
+  				async: false,
+  				dataType: 'JSON',
+  				success: function(data) {
+  					//console.log("success incrementation")
+  					//document.getElementById(idAnswer).disabled = true
+  				}
+			});
+			
+		}
+
 		function set_score() {
 			idGame = <?php echo $gme_id; ?>;
-			console.log("test incrementation")
+			//console.log("test incrementation")
 			$.ajax({
   				url: '../php/gameAjax.php?gs&idGame='+idGame+'&idAnswer='+idAnswer+'&idQuestion='+idQuestion,
   				async: false,
   				dataType: 'JSON',
   				success: function(data) {
-  					console.log("success incrementation")
-  					// TODO recevoir bool pour réponse
+  					//console.log(data)
+  					// TODO write in div
   					//document.getElementById(idAnswer).disabled = true
   				}
 			});
