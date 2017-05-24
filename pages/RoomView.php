@@ -57,6 +57,7 @@ include '../php/RoomController.php';
 <?php
 include '../includes/footer.php';
 ?>
+<script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
 
   $( "input" ).on( "click", function() {
@@ -83,6 +84,8 @@ include '../includes/footer.php';
         if(time <= 0){
             clearInterval(interval);
             clearInterval(joueurs);
+            //window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+
             var arrayFromPHP = <?php echo json_encode($themes) ?>;
 
            window.location = window.location.origin + "/quizz_battle/php/gameInitController.php?idTheme=";
@@ -129,10 +132,10 @@ include '../includes/footer.php';
     //Permet d'afficher la liste des joueur dynamiquement
     function affichageListeJoueur(data){
         if(data.length > 0){
-            console.log(data);
             document.getElementById('player').innerHTML = data;
         }
     }
+    
 </script>
 </body>
 </html>
