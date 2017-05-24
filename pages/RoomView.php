@@ -58,11 +58,11 @@ include '../php/RoomController.php';
 include '../includes/footer.php';
 ?>
 <script type="text/javascript">
-    var time = <?php echo $time['time']; ?> ;
-    console.log(time)
-    time = 1133044 - time;
-    var timePercent = time * 100 / 45;
+    var time = <?php echo $time['time']; ?>;
 
+    time = 45 - time;
+    var timePercent = time * 100 / 45;
+alert(<?php echo json_encode($_SESSION['Game']['gme_id']) ?>);
     var $divTime = $('#time-bar');
     if ($divTime){
         $divTime.attr('aria-valuenow', timePercent);
@@ -80,7 +80,7 @@ include '../includes/footer.php';
             clearInterval(interval);
             clearInterval(joueurs);
             var arrayFromPHP = <?php echo json_encode($themes) ?>;
-           $.each(arrayFromPHP, function (i, elem) {
+          /* $.each(arrayFromPHP, function (i, elem) {
                 alert(elem['thm_id']);
                 var idTheme = elem['thm_id'];
                 alert($('#'+idTheme).value);
@@ -88,7 +88,7 @@ include '../includes/footer.php';
                 {
                  alert('kjehzfj');
                 }
-            });
+            });*/
 
            //window.location = window.location.origin + "/quizz_battle/php/gameInitController.php";
         }
