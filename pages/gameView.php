@@ -117,18 +117,19 @@
   					if (data.length > 0) {
 	  					document.getElementById('question').innerHTML = data[0]['qst_text']
 	  					idQuestion = data[0]['qst_id']
-						// TODO random
-						document.getElementById('0').innerHTML = data[0]['ans_text']
-						document.getElementById('0').id = data[0]['ans_id']
+						<?php rand_answers() ?>
 
-						document.getElementById('1').innerHTML = data[1]['ans_text']
-						document.getElementById('1').id = data[1]['ans_id']
+						document.getElementById('0').innerHTML = data[<?php echo $rand_answers[0]?>]['ans_text']
+						document.getElementById('0').id = data[<?php echo $rand_answers[0]?>]['ans_id']
 
-						document.getElementById('2').innerHTML = data[2]['ans_text']
-						document.getElementById('2').id = data[2]['ans_id']
+						document.getElementById('1').innerHTML = data[<?php echo $rand_answers[1]?>]['ans_text']
+						document.getElementById('1').id = data[<?php echo $rand_answers[1]?>]['ans_id']
 
-						document.getElementById('3').innerHTML = data[3]['ans_text']
-						document.getElementById('3').id = data[3]['ans_id']
+						document.getElementById('2').innerHTML = data[<?php echo $rand_answers[2]?>]['ans_text']
+						document.getElementById('2').id = data[<?php echo $rand_answers[2]?>]['ans_id']
+
+						document.getElementById('3').innerHTML = data[<?php echo $rand_answers[3]?>]['ans_text']
+						document.getElementById('3').id = data[<?php echo $rand_answers[3]?>]['ans_id']
 					}
 					else {		
 						document.getElementById('question').innerHTML = 'Finish'
