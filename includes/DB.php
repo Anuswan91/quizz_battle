@@ -11,9 +11,9 @@ try {
 
     //$bdd = new PDO('mysql:host=localhost;dbname=quizz_battle;charset=utf8', 'root', '');
 
-    $bdd = new PDO('mysql:host=localhost;dbname=quizz_battle;charset=utf8', 'root', '');
+    //$bdd = new PDO('mysql:host=localhost;dbname=quizz_battle;charset=utf8', 'root', '');
 
-    //$bdd = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_9732ace84ff668b;charset=utf8', 'bf583c4b055e2d', '8d9c7be6');
+    $bdd = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_9732ace84ff668b;charset=utf8', 'bf583c4b055e2d', '8d9c7be6');
 
     // Developpement
     //$bdd = new PDO('mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_9732ace84ff668b;charset=utf8', 'bf583c4b055e2d', '8d9c7be6');
