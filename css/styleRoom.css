@@ -2,6 +2,17 @@ body, html{
     height: 100%;
 }
 
+.progress {
+    width: 70%;
+    height: 30px;
+    font-size: 30px;
+}
+
+.progress-bar{
+    font-size: 22px;
+    padding-top: 5px;
+}
+
 @media (max-width: 768px) {
 
     .col-room-left, .col-room-right{
@@ -21,6 +32,10 @@ body, html{
 }
 
 a.list-group-item:hover{
+    color: #fff;
+}
+
+a.list-group-item:hover{
     background-color: #444;
 }
 
@@ -35,7 +50,7 @@ a.list-group-item{
     padding: 0px 40px;
 }
 
-.col-room-left h1{
+.col-room-left h1, .col-room-right h1{
     margin-bottom: 25px;
 }
 
@@ -85,7 +100,8 @@ a.list-group-item{
 
 .funkyradio input[type="radio"]:hover:not(:checked) ~ label,
 .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
-    color: #888;
+    color: #fff;
+    font-weight: bold;
 }
 
 .funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
@@ -97,7 +113,8 @@ a.list-group-item{
 
 .funkyradio input[type="radio"]:checked ~ label,
 .funkyradio input[type="checkbox"]:checked ~ label {
-    color: #777;
+    color: #fff;
+    font-weight: bold;
 }
 
 .funkyradio input[type="radio"]:checked ~ label:before,
