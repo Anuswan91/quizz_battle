@@ -1,8 +1,8 @@
 <?php
 	//On vérifie si les session sont déja activées
-	if(session_id() == null){
+	/*if(session_id() == null){
 		session_start();
-	}
+	}*/
 
 	include "../includes/DB.php"; //Connexion a la base de données
 

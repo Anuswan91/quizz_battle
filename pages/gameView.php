@@ -8,6 +8,7 @@
 	<body>
 		<?php
 			include "../php/gameController.php"; //Connexion a la base de données
+			include '../includes/header.php';
 		?>
 
 		<div id="question"></div>
@@ -21,7 +22,9 @@
 			<button id = '3' name='3' type='submit' onclick="answer()"></button>
 		</div>
 	</body>
-
+	<?php
+		include '../includes/footer.php';
+	?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 	<script type="text/javascript">
@@ -39,11 +42,18 @@
   				url: '../php/gameAjax.php?sa&idGame='+idGame+'&idPlayer='+idPlayer+'&idAnswer='+idAnswer,
   				dataType: 'JSON',
   				success: function(data) {
+  					//disable_button()
   					console.log(data)
-  					// TODO recevoir bool pour réponse
+  					// TODO changer les class pour la réponse
   					//document.getElementById(idAnswer).disabled = true
   				}
 			});
+		}
+
+		function disable_button() {
+			//alert('de')
+			document.getElementById('1').innerHTML = 'disabled';
+			$('2').html('disabled');
 		}
 
 		function clock() {
