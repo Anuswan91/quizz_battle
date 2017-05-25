@@ -84,15 +84,11 @@ include '../includes/footer.php';
 				disable_button()
 				highlight_button(data, idAnswer)
 				console.log(data)
-				// TODO changer les class pour la réponse
-				//document.getElementById(idAnswer).disabled = true
 			}
 		});
 	}
 
 	function highlight_button(data, idAnswer) {
-		//alert('de')
-		//document.getElementById('1').innerHTML = 'disabled';
 		if (data['correct']) {
 			$('#'+data['answer']).removeClass('qst-disabled')
 			$('#'+data['answer']).addClass('qst-selected-ok')
@@ -104,17 +100,11 @@ include '../includes/footer.php';
 			$('#'+idAnswer).removeClass('qst-disabled')
 			$('#'+idAnswer).addClass('qst-selected-nok')
 		}
-		//$('.col-question').addClass('qst-disabled');
-		//TODO remove onclick
-		//$('.col-question').removeClass('qst-disabled');
 	}
 
 	function disable_button() {
-		//alert('de')
-		//document.getElementById('1').innerHTML = 'disabled';
 		$('.col-question').addClass('qst-disabled');
-		//TODO remove onclick
-		//$('.col-question').removeClass('qst-disabled');
+		$('.col-question').prop('onclick', null).off('click');;
 	}
 
 	/*function clock() {
@@ -139,7 +129,6 @@ include '../includes/footer.php';
 				
 			}
 		});
-
 	}
 
 	function set_score() {
@@ -151,11 +140,6 @@ include '../includes/footer.php';
 			async: false,
 			dataType: 'JSON',
 			success: function(data) {
-				//console.log(data)
-				//$('.score-container > table').empty();
-				/*$(data).each(function(index, value) {
-					
-				});*/
 				cpt = 1
 				$.each(data, function(index, value) {
 					console.log(index, value)
