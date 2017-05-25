@@ -62,7 +62,7 @@ include '../includes/footer.php';
 
   $( "input" ).on( "click", function() {
    var champSelect = $( "input:checked" ).attr("id");
-   alert(champSelect);
+   //alert(champSelect);
     });
     var time = <?php echo $time['time']; ?>;
 
@@ -88,7 +88,7 @@ include '../includes/footer.php';
 
             var arrayFromPHP = <?php echo json_encode($themes) ?>;
 
-           window.location = window.location.origin + "/quizz_battle/php/gameInitController.php?idTheme=";
+           window.location = window.location.origin + "/quizz_battle/php/gameInitController.php?idTheme=" + champSelect;
         }
     },100);
 
