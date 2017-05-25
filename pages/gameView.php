@@ -169,7 +169,7 @@ include '../includes/footer.php';
 		
 		var arr = []
 		while(arr.length < 4){
-    		var randomnumber = Math.ceil(Math.random()*3)
+    		var randomnumber = Math.ceil((Math.random()*4)-1)
     		if(arr.indexOf(randomnumber) > -1) continue;
     		arr[arr.length] = randomnumber;
 		}
