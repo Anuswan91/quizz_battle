@@ -90,3 +90,5 @@
 	}
 
 	header('Location: ../pages/roomView.php');
+
+?>
