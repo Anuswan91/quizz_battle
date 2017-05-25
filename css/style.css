@@ -18,6 +18,9 @@ body {
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
     background-image: url('../img/fond.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
