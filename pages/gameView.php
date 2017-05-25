@@ -20,7 +20,7 @@ include '../php/Notif.php';
 			</div>
 			<div class="inner cover">
 				<div class="row home-container">
-					<div class="col-sm-12" id="question"><h1>Quelle groupe est passé à Point gamma pour l'édition 2017 ?</h1></div>
+					<div class="col-sm-12"><h1 id="question">Quelle groupe est passé à Point gamma pour l'édition 2017 ?</h1></div>
 				</div>
 				<div id="ans-container">
 					<div class="row home-container">
@@ -117,10 +117,9 @@ include '../includes/footer.php';
 		//$('.col-question').removeClass('qst-disabled');
 	}
 
-	function clock() {
+	/*function clock() {
 		interval2 = setInterval(function(){
-			time--
-			//set_score();
+			time--			set_score();
 			if(time <= 0){
 				increment_focus()
 				next_question()
@@ -128,18 +127,16 @@ include '../includes/footer.php';
 			}
 
 		},1000);
-	}
+	}*/
 
 	function increment_focus() {
 		idGame = <?php echo $gme_id; ?>;
-		//console.log("test incrementation")
 		$.ajax({
 			url: '../php/gameAjax.php?if&idGame='+idGame+'&idQuestion='+idQuestion,
 			async: false,
 			dataType: 'JSON',
 			success: function(data) {
-				//console.log("success incrementation")
-				//document.getElementById(idAnswer).disabled = true
+				
 			}
 		});
 
@@ -147,15 +144,34 @@ include '../includes/footer.php';
 
 	function set_score() {
 		idGame = <?php echo $gme_id; ?>;
-		//console.log("test incrementation")
+		idPlayer = <?php echo $plr_id; ?>;
+
 		$.ajax({
 			url: '../php/gameAjax.php?gs&idGame='+idGame+'&idAnswer='+idAnswer+'&idQuestion='+idQuestion,
 			async: false,
 			dataType: 'JSON',
 			success: function(data) {
 				//console.log(data)
-				// TODO write in div
-				//document.getElementById(idAnswer).disabled = true
+				//$('.score-container > table').empty();
+				/*$(data).each(function(index, value) {
+					
+				});*/
+				cpt = 1
+				$.each(data, function(index, value) {
+					console.log(index, value)
+					$('#score'+cpt).text(value['score'])
+					if (index == idPlayer) {
+						$('#name'+cpt).text('Me')
+						$('#name'+cpt).css('font-weight', 'bold')
+					}
+					// Pour afficher le nom de tous les joueurs 
+					//$('#name'+cpt).text(value['pseudo'])
+					cpt++
+				});
+				for(i = cpt; i <= 5; i++) {
+					$('#score'+i).remove()
+					$('#name'+i).remove()
+				}
 			}
 		});
 
@@ -180,27 +196,24 @@ include '../includes/footer.php';
 			dataType: 'JSON',
 			success: function (data) {
 				if (data.length > 0) {
-					document.getElementById('question').innerHTML = '<h1>' + data[0]['qst_text'] + '</h1>';
+					$('#question').text(data[0]['qst_text']);
 					idQuestion = data[0]['qst_id'];
 
-					document.getElementById('0').innerHTML = data[arr[0]]['ans_text']
-					document.getElementById('0').id = data[arr[0]]['ans_id']
+					$('#0').text(data[arr[0]]['ans_text'])
+					$('#0').attr('id', data[arr[0]]['ans_id'])
 
-					document.getElementById('1').innerHTML = data[arr[1]]['ans_text']
-					document.getElementById('1').id = data[arr[1]]['ans_id']
+					$('#1').text(data[arr[1]]['ans_text'])
+					$('#1').attr('id', data[arr[1]]['ans_id'])
 
-					document.getElementById('2').innerHTML = data[arr[2]]['ans_text']
-					document.getElementById('2').id = data[arr[2]]['ans_id']
+					$('#2').text(data[arr[2]]['ans_text'])
+					$('#2').attr('id', data[arr[2]]['ans_id'])
 
-					document.getElementById('3').innerHTML = data[arr[3]]['ans_text']
-					document.getElementById('3').id = data[arr[3]]['ans_id']
+					$('#3').text(data[arr[3]]['ans_text'])
+					$('#3').attr('id', data[arr[3]]['ans_id'])
 				}
 				else {
-					document.getElementById('question').innerHTML = '<h1>FIN DE LA PARTIE</h1>';
+					$('question').text('FIN DE LA PARTIE');
 				}
-				//$('3').attr('id', data[3]['ans_id'])
-
-				//console.log($(data[3]['ans_id']))
 			}
 		});
 	};
@@ -231,10 +244,12 @@ include '../includes/footer.php';
 			$divTime.css('transition','none');
 			increment_focus();
 			next_question();
+			set_score();
 		}
 	},100);
 
-		next_question();
+	set_score();
+	next_question();
 	</script>
 </body>
 </html>
