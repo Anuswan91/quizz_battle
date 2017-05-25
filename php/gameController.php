@@ -19,12 +19,4 @@
 	    do $rand=rand($min,$max); while(in_array($rand,$tab));
 	    return $rand;
 	}
-
-	function rand_answers()
-	{
-		$rand_answers = array();
-		for($i=0;$i<4;$i++)
-    		$rand_answers[] = uniq_rand(0, 4,$rand_answers);
-		return rand_answers();
-	}
 ?>

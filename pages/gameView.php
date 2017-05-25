@@ -166,6 +166,14 @@ include '../includes/footer.php';
 		timePercent = time * 100 / 10;
 		document.getElementById('ans-container').innerHTML = ('<div class="row home-container"><div class="col-sm-6"><div class="col-question btn-home" id="0" onclick="answer();"></div></div><div class="col-sm-6"><div class="col-question btn-home" id="1" onclick="answer();"></div></div></div><div class="row home-container"><div class="col-sm-6"><div class="col-question btn-home" id="2" onclick="answer();"></div></div><div class="col-sm-6"><div class="col-question btn-home" id="3" onclick="answer();"></div></div></div>');
 		idGame = <?php echo $gme_id; ?>;
+		
+		var arr = []
+		while(arr.length < 4){
+    		var randomnumber = Math.ceil(Math.random()*3)
+    		if(arr.indexOf(randomnumber) > -1) continue;
+    		arr[arr.length] = randomnumber;
+		}
+
 		idAnswer = 0;
 		$.ajax({
 			url: '../php/gameAjax.php?gfq&idGame=' + idGame,
@@ -175,17 +183,17 @@ include '../includes/footer.php';
 					document.getElementById('question').innerHTML = '<h1>' + data[0]['qst_text'] + '</h1>';
 					idQuestion = data[0]['qst_id'];
 
-					document.getElementById('0').innerHTML = data[0]['ans_text']
-					document.getElementById('0').id = data[0]['ans_id']
+					document.getElementById('0').innerHTML = data[arr[0]]['ans_text']
+					document.getElementById('0').id = data[arr[0]]['ans_id']
 
-					document.getElementById('1').innerHTML = data[1]['ans_text']
-					document.getElementById('1').id = data[1]['ans_id']
+					document.getElementById('1').innerHTML = data[arr[1]]['ans_text']
+					document.getElementById('1').id = data[arr[1]]['ans_id']
 
-					document.getElementById('2').innerHTML = data[2]['ans_text']
-					document.getElementById('2').id = data[2]['ans_id']
+					document.getElementById('2').innerHTML = data[arr[2]]['ans_text']
+					document.getElementById('2').id = data[arr[2]]['ans_id']
 
-					document.getElementById('3').innerHTML = data[3]['ans_text']
-					document.getElementById('3').id = data[3]['ans_id']
+					document.getElementById('3').innerHTML = data[arr[3]]['ans_text']
+					document.getElementById('3').id = data[arr[3]]['ans_id']
 				}
 				else {
 					document.getElementById('question').innerHTML = '<h1>FIN DE LA PARTIE</h1>';
