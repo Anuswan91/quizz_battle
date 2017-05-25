@@ -48,16 +48,6 @@
 	function getScore($idGame, $idAnswer, $idQuestion) {
 		include "../includes/DB.php";
 
-		/*$cpt = 0;
-		while ($cpt < 5 && !isEverybodyAnswerFocusedQuestion($idGame) ) {
-			sleep(1);
-			$cpt++;
-		}*/
-		
-		//incrementFocus($idGame, $idQuestion);
-		
-		//incrementFocus($idGame, $question['qst_id']);
-
 		return getScoreByGame($idGame);
 	}
 
@@ -145,14 +135,16 @@
 		$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '0' 
 								WHERE `ghq_game_id` = '".$idGame."' 
 									AND `ghq_question_id` = '".$questionOldFocus."'");
-		if ($search && $questionNewFocus == NULL) {
-			//fin du game
+		if (!$search && $questionNewFocus == NULL) {
+			return false;
 		}
 		else {
 			//Update new focus
 			$query = $bdd->query("	UPDATE game_has_question SET `ghq_focus` = '1' 
 									WHERE `ghq_game_id` = '".$idGame."' 
 										AND `ghq_question_id` = '".$questionNewFocus."'");
+
+			return true;
 		}
 	}
 
@@ -219,7 +211,7 @@
 		$idGame = $_GET['idGame'];
 		$idQuestion = $_GET['idQuestion'];
 		
-		incrementFocus($idGame, $idQuestion);
+		$data['alive'] = incrementFocus($idGame, $idQuestion);
 	}
 	
 	echo json_encode( $data );

@@ -83,7 +83,6 @@ include '../includes/footer.php';
 			success: function(data) {
 				disable_button()
 				highlight_button(data, idAnswer)
-				console.log(data)
 			}
 		});
 	}
@@ -96,7 +95,6 @@ include '../includes/footer.php';
 		else{
 			$('#'+data['answer']).removeClass('qst-disabled')
 			$('#'+data['answer']).addClass('qst-disabled-ok')
-			console.log(idAnswer)
 			$('#'+idAnswer).removeClass('qst-disabled')
 			$('#'+idAnswer).addClass('qst-selected-nok')
 		}
@@ -107,18 +105,6 @@ include '../includes/footer.php';
 		$('.col-question').prop('onclick', null).off('click');;
 	}
 
-	/*function clock() {
-		interval2 = setInterval(function(){
-			time--			set_score();
-			if(time <= 0){
-				increment_focus()
-				next_question()
-				time = defaultTime
-			}
-
-		},1000);
-	}*/
-
 	function increment_focus() {
 		idGame = <?php echo $gme_id; ?>;
 		$.ajax({
@@ -126,7 +112,10 @@ include '../includes/footer.php';
 			async: false,
 			dataType: 'JSON',
 			success: function(data) {
-				
+				if ( !data['alive'] ) {
+					$('#question').text('End');
+					$('#ans-container').remove();
+				}
 			}
 		});
 	}
@@ -142,7 +131,6 @@ include '../includes/footer.php';
 			success: function(data) {
 				cpt = 1
 				$.each(data, function(index, value) {
-					console.log(index, value)
 					$('#score'+cpt).text(value['score'])
 					if (index == idPlayer) {
 						$('#name'+cpt).text('Me')
