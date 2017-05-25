@@ -192,6 +192,11 @@
 	// Get focus
 	if (isset($_GET['gfq']) && isset($_GET['idGame'])) {
 		$idGame = $_GET['idGame'];
+
+		if($data == false) {
+			include 'gameEndController.php';
+		}
+
 		$data = getFocusedQuestion($idGame);
 	}
 	//send answer
