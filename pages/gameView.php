@@ -120,7 +120,7 @@ include '../includes/footer.php';
 	function clock() {
 		interval2 = setInterval(function(){
 			time--
-			set_score();
+			//set_score();
 			if(time <= 0){
 				increment_focus()
 				next_question()
@@ -221,7 +221,7 @@ include '../includes/footer.php';
 		time-=1/10;
 		timePercent = time * 100 / 10;
 		if(time%2 == 0){
-			set_score();
+			//set_score();
 		}
 		if ($divTime){
 			$divTime.attr('aria-valuenow', timePercent);
