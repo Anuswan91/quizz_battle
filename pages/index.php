@@ -21,7 +21,7 @@
             {?>
             <div class="nav-login">
                 <span class="username"><?= $_SESSION['Auth']['plr_pseudo']?></span>
-                <a href="#" class="btn-go">ADMIN</a>
+                <a href="adminView.php" class="btn-go">ADMIN</a>
                 <a href="?logout=true" class="btn-go" onclick="notif('Déconnecté', 1);">LOGOUT</a>
             </div><?php
             }else{?>

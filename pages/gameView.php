@@ -162,6 +162,10 @@ include '../includes/footer.php';
 					$('#question').text('End');
 					$('#ans-container').remove();
 					$('#theme').remove();
+
+					// redirection vers les scores
+					window.location.replace('scoreView.php?idGame='+idGame);
+
 				}
 				else {
 					$('#theme').text(data[0]['thm_name']);
