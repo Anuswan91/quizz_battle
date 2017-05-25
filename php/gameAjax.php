@@ -136,6 +136,9 @@
 								WHERE `ghq_game_id` = '".$idGame."' 
 									AND `ghq_question_id` = '".$questionOldFocus."'");
 		if (!$search && $questionNewFocus == NULL) {
+			// Fin du game
+			// TODO delete session
+			// Update bdd
 			return false;
 		}
 		else {
