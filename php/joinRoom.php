@@ -35,8 +35,7 @@
 						 WHERE gme_state_id = 1
 						 AND gme_nb_player < 5
                          LIMIT 1");
-/*	var_dump($room->rowCount());
-	var_dump($room->fetch());*/
+
 	//Si il n'y a pas de room actuellement libre, on la créer
 	if($room->rowCount() == 0){
 
