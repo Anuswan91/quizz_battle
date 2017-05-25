@@ -4,7 +4,7 @@
 
 	function getFocusedQuestion($idGame) {
 		include "../includes/DB.php";
-		$query = $bdd->query("	SELECT qst_id, qst_text, thm_name, ans_id, ans_text, ans_correct
+		$query = $bdd->query("	SELECT qst_id, qst_text, thm_name, ans_id, ans_text, ans_correct, thm_color
 								FROM game_has_question g
 								INNER JOIN question q ON ghq_question_id = qst_id
 								INNER JOIN answer a ON ghq_question_id = ans_question_id

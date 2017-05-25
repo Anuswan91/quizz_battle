@@ -20,17 +20,9 @@ include '../php/Notif.php';
 			</div>
 			<div class="inner cover">
 				<div class="row home-container">
-					<div class="col-sm-12"><h1 id="question">Quelle groupe est passé à Point gamma pour l'édition 2017 ?</h1></div>
+					<div class="col-sm-12"><span id="theme"></span><h1 id="question"></h1></div>
 				</div>
 				<div id="ans-container">
-					<div class="row home-container">
-						<div class="col-sm-6"><div class="col-question btn-home" id="0" onclick="answer();">Salut</div></div>
-						<div class="col-sm-6"><div class="col-question btn-home" id="1" onclick="answer();">C'est</div></div>
-					</div>
-					<div class="row home-container">
-						<div class="col-sm-6"><div class="col-question btn-home" id="2" onclick="answer();">Cool</div></div>
-						<div class="col-sm-6"><div class="col-question btn-home" id="3" onclick="answer();">Lol</div></div>
-					</div>
 				</div>
 			</div>
 			<div class="score-container">
@@ -168,6 +160,9 @@ include '../includes/footer.php';
 			dataType: 'JSON',
 			success: function (data) {
 				if (data.length > 0) {
+					$('#theme').text(data[0]['thm_name']);
+					$('#theme').css('background-color',data[0]['thm_color']);
+					console.log(data[0]['thm_color']);
 					$('#question').text(data[0]['qst_text']);
 					idQuestion = data[0]['qst_id'];
 

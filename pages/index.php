@@ -23,7 +23,7 @@
                 <span class="username"><?= $_SESSION['Auth']['plr_pseudo']?></span>
                 <a href="#" class="btn-go">ADMIN</a>
                 <a href="?logout=true" class="btn-go" onclick="notif('Déconnecté', 1);">LOGOUT</a>
-            </div><?php 
+            </div><?php
             }else{?>
             <form class="nav-login" action="../php/userLoginController.php"  method="post" name="login">
                 <input type="text" placeholder="Pseudo" name="pseudo" class="login-text"/>
@@ -38,14 +38,14 @@
                 <div class="col-sm-6 col-home-left">
                     <h1>Tester vos connaissances !</h1>
                     <a href="../php/joinRoom.php" title="Jouer" class="btn-home">Jouer en ligne</a><br/>
-                    <a href="#" title="Amis" class="btn-home">Jouer avec des amis</a><br/><br/>
+                    <a href="#" title="Amis" class="btn-home btn-disabled">Jouer avec des amis</a><br/><br/>
                     <?php
                    	if (!isset($_SESSION['Auth']) || $_SESSION['Auth'] == null)
                     	{
                     		?>
                     		<h1>Pas encore membre ?</h1>
                    			<a href="../pages/userRegisterView.php" title="S'inscrire" class="btn-home">S'inscrire</a>
-                    		<?php 
+                    		<?php
                     	}
                     ?>
                 </div>
