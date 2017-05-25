@@ -75,6 +75,7 @@ include '../includes/footer.php';
 			success: function(data) {
 				disable_button()
 				highlight_button(data, idAnswer)
+				set_score();
 			}
 		});
 	}
@@ -104,10 +105,7 @@ include '../includes/footer.php';
 			async: false,
 			dataType: 'JSON',
 			success: function(data) {
-				if ( !data['alive'] ) {
-					$('#question').text('End');
-					$('#ans-container').remove();
-				}
+
 			}
 		});
 	}
@@ -159,7 +157,13 @@ include '../includes/footer.php';
 			url: '../php/gameAjax.php?gfq&idGame=' + idGame,
 			dataType: 'JSON',
 			success: function (data) {
-				if (data.length > 0) {
+				console.log(data)
+				if (data.length === 0) {
+					$('#question').text('End');
+					$('#ans-container').remove();
+					$('#theme').remove();
+				}
+				else {
 					$('#theme').text(data[0]['thm_name']);
 					$('#theme').css('background-color',data[0]['thm_color']);
 					console.log(data[0]['thm_color']);
@@ -177,9 +181,6 @@ include '../includes/footer.php';
 
 					$('#3').text(data[arr[3]]['ans_text'])
 					$('#3').attr('id', data[arr[3]]['ans_id'])
-				}
-				else {
-					$('question').text('FIN DE LA PARTIE');
 				}
 			}
 		});
