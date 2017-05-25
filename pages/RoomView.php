@@ -88,7 +88,7 @@ include '../includes/footer.php';
 
             var arrayFromPHP = <?php echo json_encode($themes) ?>;
 
-           window.location = window.location.origin + "/quizz_battle/php/gameInitController.php?idTheme=" + champSelect;
+           window.location = window.location.origin + "/quizz_battle/php/gameInitController.php?idTheme=" + $( "input:checked" ).attr("id");
         }
     },100);
 
