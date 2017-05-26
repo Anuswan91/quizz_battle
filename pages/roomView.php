@@ -71,7 +71,7 @@ include '../includes/footer.php';
         if(time <= 0){
             clearInterval(interval);
             clearInterval(joueurs);
-            //window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
+            window.location = window.location.origin + "/quizz_battle/pages/gameView.php";
 
             var arrayFromPHP = <?php echo json_encode($themes) ?>;
 

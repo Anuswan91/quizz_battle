@@ -194,12 +194,7 @@
 		$idGame = $_GET['idGame'];
 
 		$data = getFocusedQuestion($idGame);
-		
-		if(empty($data)) {
-			include 'gameEndController.php';
-		}
 
-	
 	}
 	//send answer
 	elseif (isset($_GET['sa']) && isset($_GET['idGame']) && isset($_GET['idPlayer']) && isset($_GET['idAnswer'])) {

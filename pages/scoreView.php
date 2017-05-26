@@ -42,7 +42,7 @@
 								$i = $i + 1;
 							}
 						?>
-						<a href="../pages/index.php" class="btn-home btn-leave">Quitter</a><br/>
+						<a href="../php/gameEndController.php" class="btn-home btn-leave">Quitter</a><br/>
 					</div>
 				</div>
 			</div>
