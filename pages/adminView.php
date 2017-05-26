@@ -1,5 +1,5 @@
 <?php 
-include '../php/AdminController.php'; 
+include '../php/adminController.php'; 
 include '../includes/header.php';
 ?>
 <link href="../css/styleAdmin.css" rel="stylesheet">
