@@ -31,15 +31,15 @@ include '../php/Notif.php';
 						</td>
 					</tr>
 					<tr>
-						<td class="score-name" id="name1">Me
+						<td class="score-name" id="name1">J1
 						</td>
-						<td class="score-name" id="name2">J1
+						<td class="score-name" id="name2">J2
 						</td>
-						<td class="score-name" id="name3">J2
+						<td class="score-name" id="name3">J3
 						</td>
-						<td class="score-name" id="name4">J3
+						<td class="score-name" id="name4">J4
 						</td>
-						<td class="score-name" id="name5">J4
+						<td class="score-name" id="name5">J5
 						</td>
 					</tr>
 				</table>
