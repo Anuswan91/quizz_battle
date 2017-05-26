@@ -31,8 +31,8 @@
 				unset($_SESSION['Auth']['plr_id']);
 				unset($_SESSION['Auth']['plr_pseudo']);
 			}
-
-			header('Location: ../pages/index.php');
 		}
 	}
+
+	header('Location: ../pages/index.php');
 ?>
