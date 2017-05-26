@@ -12,11 +12,7 @@ include '../php/Notif.php';
 <div class="site-wrapper">
   <div class="site-wrapper-inner">
     <div class="cover-container">
-      <div class="masthead clearfix">
-        <div class="inner">
-          <a href="index.php"><img class="nav-logo" src="../img/logo_quiz.png"/></a>
-        </div>
-      </div>
+        <?php include '../includes/nav_other.php';?>
       <div class="inner cover">
           <h2>Inscription</h2>
           <form action="../php/userRegisterController.php"  method="post" name="registration">

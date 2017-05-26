@@ -7,16 +7,7 @@ include '../includes/header.php';
 <div class="site-wrapper">
 	<div class="site-wrapper-inner">
 		<div class="cover-container">
-			<div class="masthead clearfix">
-				<div class="inner">
-					<a href="index.php"><img class="nav-logo" src="../img/logo_quiz.png"/></a>
-					<div class="nav-login">
-						<span class="username"><?= $_SESSION['Auth']['plr_pseudo']?></span>
-						<a href="adminView.php" class="btn-go">ADMIN</a>
-						<a href="?logout=true" class="btn-go" onclick="notif('Déconnecté', 1);">LOGOUT</a>
-					</div>
-				</div>
-			</div>
+			<?php include '../includes/nav_home.php';?>
 			<div class="inner cover">
 				<div class="row home-container">
 					<div class="col-sm-6">

@@ -9,16 +9,7 @@ include '../php/RoomController.php';
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <img class="nav-logo" src="../img/logo_quiz.png"/>
-                    <div class="nav-login progress">
-                        <div id="time-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
-                             aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php include '../includes/nav_game.php';?>
             <div class="inner cover">
                 <div class="row home-container">
                     <div class="col-sm-6 col-room-left">
