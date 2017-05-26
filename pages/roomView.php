@@ -28,7 +28,7 @@ include '../php/RoomController.php';
                             foreach ($themes as $key => $value) {
                                 ?>
                                 <div class="funkyradio-success">
-                                    <input type="radio" name="radio" id="<?php echo $value['thm_id']; ?>" />
+                                    <input type="radio" name="radio" id="<?php echo $value['thm_id']; ?>" checked />
                                     <label for="<?php echo $value['thm_id']; ?>" style="background-color: <?php echo $value['thm_color']; ?>; opacity:0.7;"><?php echo $value['thm_name']; ?></label>
                                 </div>
                                 <?php }?>
@@ -59,11 +59,7 @@ include '../includes/footer.php';
 ?>
 <script src="../bootstrap/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
-
-  $( "input" ).on( "click", function() {
-   var champSelect = $( "input:checked" ).attr("id");
-   //alert(champSelect);
-    });
+	
     var time = <?php echo $time['time']; ?>;
 
     time = 45 - time;
