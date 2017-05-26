@@ -1,5 +1,5 @@
 <?php 
-include '../php/AdminController.php'; 
+include '../php/adminController.php'; 
 include '../includes/header.php';
 ?>
 <link href="../css/styleAdmin.css" rel="stylesheet">
@@ -20,13 +20,13 @@ include '../includes/header.php';
 			<div class="inner cover">
 				<div class="row home-container">
 					<div class="col-sm-6">
-						<h1>Nouveau théme:</h1></br>
+						<h1>Nouveau thème:</h1></br>
 						<form action="../php/adminController.php" method="post">
 							<input type="text" placeholder="Thème" name="nt_theme" class="login-text" required>
 							<input type="color" value="#FFFFFF" name="nt_color" class="theme-color-picker login-text" required>
 							<input type="submit" class="btn-go" value="Go">
 						</form></br></br>
-						<h1>Liste des thémes existants: </h1></br>
+						<h1>Liste des thèmes existants: </h1></br>
 						<div class="themes">
 							<?php
 							foreach ($themes as $theme) {
@@ -53,7 +53,7 @@ include '../includes/header.php';
 										}
 										?>
 									</select><br/>
-									Question: <input type="text" placeholder="Question" name="nq_question" class="login-text" required/><br/>
+									Question: <textarea placeholder="Question" name="nq_question" class="login-text" required></textarea><br/>
 									Réponse A: <input type="text" placeholder="Réponse A" name="nq_answerA"  class="login-text" required/>
 									<input type="checkbox" name="nq_correctA"><br/>
 									Réponse B: <input type="text" placeholder="Réponse B" name="nq_answerB" class="login-text"  required/>
@@ -109,7 +109,7 @@ include '../includes/header.php';
 										?>
 									</div>
 									<div class="col-sm-1">
-										<span class="glyphicon glyphicon-trash icon-trash" onclick="window.location.href = '../php/adminController.php?dq= <?php echo $key; ?>';"></span>
+										<span class="glyphicon glyphicon-trash icon-trash" onclick="window.location.href = '../php/adminController.php?dq=<?php echo $key; ?>';"></span>
 									</div>
 								</div>
 								<?php
