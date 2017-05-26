@@ -36,7 +36,13 @@
 			$array[$player['plr_id']] = array('pseudo' => $player['plr_pseudo'], 'score' => $res['score'], 'plr_id' => $player['plr_id']);
 		}
 
-		sort($res['score'], SORT_DESC);
+		$score = array();
+
+		foreach( $array as $key => $row) {
+			$score[$key]  = $row['score'];
+		}
+
+		array_multisort($score, SORT_DESC, $array);
 		
 		return $array;
 	}
