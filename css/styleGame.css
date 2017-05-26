@@ -132,3 +132,9 @@ h1{
     border-radius: 5px;
     color: white;
 }
+
+@media (min-width: 768px) {
+    .cover {
+        margin-top: 150px;
+    }
+}
