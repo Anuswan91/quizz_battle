@@ -138,3 +138,16 @@ h1{
         margin-top: 150px;
     }
 }
+
+@media (max-width: 768px) {
+    .cover {
+        margin-top: 40px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .score-container {
+        display: none !important;
+    }
+}

@@ -184,10 +184,6 @@ a.list-group-item{
     background-color: #5bc0de;
 }
 
-.inner.cover {
-    margin-top: 150px;
-}
-
 @media (min-width: 768px) {
     .cover {
         margin-top: 150px;
