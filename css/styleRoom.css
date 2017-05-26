@@ -184,3 +184,8 @@ a.list-group-item{
     background-color: #5bc0de;
 }
 
+@media (min-width: 768px) {
+    .cover {
+        margin: 150px 20px;
+    }
+}
