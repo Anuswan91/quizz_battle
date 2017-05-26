@@ -195,7 +195,7 @@
 
 		$data = getFocusedQuestion($idGame);
 		
-		if($data == false) {
+		if(empty($data)) {
 			include 'gameEndController.php';
 		}
 
