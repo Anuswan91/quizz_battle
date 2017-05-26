@@ -20,13 +20,13 @@ include '../includes/header.php';
 			<div class="inner cover">
 				<div class="row home-container">
 					<div class="col-sm-6">
-						<h1>Nouveau théme:</h1></br>
+						<h1>Nouveau thème:</h1></br>
 						<form action="../php/adminController.php" method="post">
 							<input type="text" placeholder="Thème" name="nt_theme" class="login-text" required>
 							<input type="color" value="#FFFFFF" name="nt_color" class="theme-color-picker login-text" required>
 							<input type="submit" class="btn-go" value="Go">
 						</form></br></br>
-						<h1>Liste des thémes existants: </h1></br>
+						<h1>Liste des thèmes existants: </h1></br>
 						<div class="themes">
 							<?php
 							foreach ($themes as $theme) {
