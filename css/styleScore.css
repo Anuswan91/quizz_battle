@@ -1,0 +1,16 @@
+.player{
+    font-size: 20px;
+    color: white;
+    text-shadow: none;
+}
+
+.player.win{
+    color: #3ed12b;
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 1px 1px 0px black;
+}
+
+h1{
+    color: white;
+}

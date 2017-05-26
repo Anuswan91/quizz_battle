@@ -33,7 +33,7 @@
 				$res['score'] = 0;
 			}
 
-			$array[$player['plr_id']] = array('pseudo' => $player['plr_pseudo'], 'score' => $res['score']);
+			$array[$player['plr_id']] = array('pseudo' => $player['plr_pseudo'], 'score' => $res['score'], 'plr_id' => $player['plr_id']);
 		}
 		
 		return $array;
