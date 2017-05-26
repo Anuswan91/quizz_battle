@@ -101,7 +101,7 @@ include '../includes/footer.php';
     }
 
 
-    var joueurs = setInterval('requestListeJoueur(affichageListeJoueur)',5000);
+    var joueurs = setInterval('requestListeJoueur(affichageListeJoueur)',1500);
     //Affiche la liste des joueurs
     function requestListeJoueur(callback) {
         var xhr = getXMLHttpRequest();

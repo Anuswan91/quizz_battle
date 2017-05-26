@@ -13,7 +13,8 @@
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
-        <?php include '../includes/nav_home.php';?>
+        <?php include '../includes/nav_home.php';
+        ?>
         <div class="inner cover">
             <div class="row home-container">
                 <div class="col-sm-6 col-home-left">
@@ -40,6 +41,11 @@
   </div>
   <?php
     include '../includes/footer.php';
+  if(isset($_GET['errorConnect'])){
+      ?>
+      <script>notif('Utilisateur inconnu ...', 1);</script>
+      <?php
+  }
   ?>
   </body>
 </html>
