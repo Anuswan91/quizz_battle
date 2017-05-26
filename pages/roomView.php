@@ -13,7 +13,7 @@ include '../php/RoomController.php';
             <div class="inner cover">
                 <div class="row home-container">
                     <div class="col-sm-6 col-room-left">
-                        <h1>Sélectionner votre théme:</h1>
+                        <h1>Sélectionnez votre thème :</h1>
                         <div class="funkyradio">
                             <?php
                             foreach ($themes as $key => $value) {
