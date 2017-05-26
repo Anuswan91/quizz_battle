@@ -193,11 +193,13 @@
 	if (isset($_GET['gfq']) && isset($_GET['idGame'])) {
 		$idGame = $_GET['idGame'];
 
-		if($data == false) {
+		$data = getFocusedQuestion($idGame);
+		
+		if(empty($data)) {
 			include 'gameEndController.php';
 		}
 
-		$data = getFocusedQuestion($idGame);
+	
 	}
 	//send answer
 	elseif (isset($_GET['sa']) && isset($_GET['idGame']) && isset($_GET['idPlayer']) && isset($_GET['idAnswer'])) {

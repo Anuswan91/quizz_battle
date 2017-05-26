@@ -37,6 +37,4 @@
 
 	}
 
-	//die(var_dump($result))
-
 ?>

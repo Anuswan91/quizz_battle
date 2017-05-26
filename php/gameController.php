@@ -14,7 +14,6 @@
 	$plr_id = $_SESSION['Auth']['plr_id'];
 	//$plr_id = 4;
 
-	var_dump($gme_id);
 
 	$sql = "UPDATE game_has_question
 			SET ghq_focus=1
