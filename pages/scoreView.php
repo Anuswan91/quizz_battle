@@ -29,16 +29,16 @@
 									echo '<span class="glyphicon glyphicon-arrow-right"></span>';
 								}
 								if($i==0){
-									echo '<span class="glyphicon glyphicon-tower"></span>';
+									echo ' <span class="glyphicon glyphicon-tower"></span> ';
 								}
 								echo $score['pseudo'].' : '.$score['score'];
 								if($i==0) {
-									echo '<span class="glyphicon glyphicon-tower"></span>';
+									echo ' <span class="glyphicon glyphicon-tower"></span> ';
 								}
 								if($isActual) {
 									echo '<span class="glyphicon glyphicon-arrow-left"></span>';
 								}
-								echo '</span><br/>';
+								echo '</span><br/><br/>';
 								$i = $i + 1;
 							}
 						?>

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="276a8789-68d6-4bc4-bc96-a8be9b588181" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/UserView.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/adminView.php" afterPath="$PROJECT_DIR$/pages/adminView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styleAdmin.css" afterPath="$PROJECT_DIR$/css/styleAdmin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styleScore.css" afterPath="$PROJECT_DIR$/css/styleScore.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/nav_home.php" afterPath="$PROJECT_DIR$/includes/nav_home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/gameView.php" afterPath="$PROJECT_DIR$/pages/gameView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index.php" afterPath="$PROJECT_DIR$/pages/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/roomView.php" afterPath="$PROJECT_DIR$/pages/roomView.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/scoreView.php" afterPath="$PROJECT_DIR$/pages/scoreView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/userRegisterView.php" afterPath="$PROJECT_DIR$/pages/userRegisterView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/scoreController.php" afterPath="$PROJECT_DIR$/php/scoreController.php" />
     </list>
     <ignored path="quizz_battle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,48 +32,18 @@
       <file leaf-file-name="scoreView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/scoreView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="476">
+              <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userRegisterView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/userRegisterView.php">
+      <file leaf-file-name="styleRoom.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/styleRoom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav_home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/nav_home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav_other.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/nav_other.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roomView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/roomView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+            <state relative-caret-position="115">
+              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -92,36 +61,78 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="nav_home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/nav_home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameView.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/gameView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="adminView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/adminView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="-102">
               <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/gameView.php">
+      <file leaf-file-name="answerView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/answerView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <folding>
+                <marker date="1495788752161" expanded="true" signature="323:369" placeholder="SELECT ans_c... answer" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+            <state relative-caret-position="257">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding>
                 <marker date="1495792997133" expanded="true" signature="432:868" placeholder="..." />
                 <marker date="1495792997133" expanded="true" signature="477:868" placeholder="..." />
                 <marker date="1495792997133" expanded="true" signature="530:868" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styleScore.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/styleScore.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styleAdmin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/styleAdmin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,22 +152,22 @@
         <option value="$PROJECT_DIR$/php/listeJoueurRoom.php" />
         <option value="$PROJECT_DIR$/php/gameController.php" />
         <option value="$PROJECT_DIR$/pages/RoomView.php" />
-        <option value="$PROJECT_DIR$/css/styleAdmin.css" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/styleGame.css" />
         <option value="$PROJECT_DIR$/php/gameAjax.php" />
-        <option value="$PROJECT_DIR$/css/styleScore.css" />
-        <option value="$PROJECT_DIR$/php/scoreController.php" />
         <option value="$PROJECT_DIR$/css/styleRoom.css" />
-        <option value="$PROJECT_DIR$/includes/nav_home.php" />
         <option value="$PROJECT_DIR$/includes/nav_other.php" />
         <option value="$PROJECT_DIR$/includes/nav_game.php" />
         <option value="$PROJECT_DIR$/pages/index.php" />
-        <option value="$PROJECT_DIR$/pages/gameView.php" />
         <option value="$PROJECT_DIR$/pages/adminView.php" />
         <option value="$PROJECT_DIR$/pages/roomView.php" />
         <option value="$PROJECT_DIR$/pages/userRegisterView.php" />
+        <option value="$PROJECT_DIR$/php/scoreController.php" />
         <option value="$PROJECT_DIR$/pages/scoreView.php" />
+        <option value="$PROJECT_DIR$/css/styleScore.css" />
+        <option value="$PROJECT_DIR$/css/styleAdmin.css" />
+        <option value="$PROJECT_DIR$/includes/nav_home.php" />
+        <option value="$PROJECT_DIR$/pages/gameView.php" />
       </list>
     </option>
   </component>
@@ -221,6 +232,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="quizz_battle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quizz_battle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quizz_battle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quizz_battle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quizz_battle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,12 +347,12 @@
       <option name="presentableId" value="Default" />
       <updated>1495551659338</updated>
       <workItem from="1495551660536" duration="26904000" />
-      <workItem from="1495713301808" duration="19081000" />
+      <workItem from="1495713301808" duration="20970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45985000" />
+    <option name="totallyTimeSpent" value="47874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -323,7 +362,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -451,16 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/answerView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495788752161" expanded="true" signature="323:369" placeholder="SELECT ans_c... answer" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/DB.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -479,14 +508,6 @@
             <marker date="1495724907434" expanded="true" signature="786:830" placeholder="SELECT * FRO... question" />
             <marker date="1495724907434" expanded="true" signature="1058:1161" placeholder="INSERT INTO game_has_question... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="246" column="19" selection-start-line="246" selection-start-column="19" selection-end-line="246" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -525,45 +546,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styleScore.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/styleGame.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/scoreController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <marker date="1495791520009" expanded="true" signature="193:381" placeholder="SELECT ghp_g... game_has_player" />
-            <marker date="1495791520009" expanded="true" signature="653:880" placeholder="SELECT pha_p... player_has_answer" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styleAdmin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="103" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styleRoom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -584,36 +570,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/nav_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/nav_other.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/nav_game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/scoreView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -634,31 +594,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/scoreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+          <folding>
+            <marker date="1495795605981" expanded="true" signature="193:381" placeholder="SELECT ghp_g... game_has_player" />
+            <marker date="1495795605981" expanded="true" signature="653:909" placeholder="SELECT pha_p... player_has_answer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="65" column="29" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/scoreView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styleRoom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styleAdmin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/adminView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="-102">
           <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/gameView.php">
+    <entry file="file://$PROJECT_DIR$/pages/answerView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        <state relative-caret-position="238">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding>
+            <marker date="1495788752161" expanded="true" signature="323:369" placeholder="SELECT ans_c... answer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styleScore.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        <state relative-caret-position="257">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding>
             <marker date="1495792997133" expanded="true" signature="432:868" placeholder="..." />
             <marker date="1495792997133" expanded="true" signature="477:868" placeholder="..." />
             <marker date="1495792997133" expanded="true" signature="530:868" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/nav_game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/nav_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/gameView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

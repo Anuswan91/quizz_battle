@@ -25,7 +25,8 @@
 									FROM player_has_answer
 									INNER JOIN answer ON pha_answer_id = ans_id
 									WHERE pha_game_id = '".$idGame."'
-										AND pha_player_id = '".$player['plr_id']."'");
+										AND pha_player_id = '".$player['plr_id']."'
+									ORDER BY score desc");
 
 			$res = $query->fetch();
 

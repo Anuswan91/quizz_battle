@@ -8,7 +8,7 @@ include '../php/Notif.php';
 <div class="site-wrapper">
 	<div class="site-wrapper-inner">
 		<div class="cover-container">
-			<?php include '../includes/nav_home.php';?>
+			<?php include '../includes/nav_game.php';?>
 			<div class="inner cover">
 				<div class="row home-container">
 					<div class="col-sm-12"><span id="theme"></span><h1 id="question"></h1></div>
